@@ -9,7 +9,6 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 import api from './api/index'
-/* eslint-disable no-console */
 
 const port = 3000;
 const app = express();

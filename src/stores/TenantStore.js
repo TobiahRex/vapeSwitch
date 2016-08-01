@@ -4,11 +4,11 @@ import AppDispatcher from '../AppDispatcher'
 let _tenants = [];
 
 class TenantStore extends EventEmitter {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     AppDispatcher.register(action => {
-      switch(action.actionType) {
+      switch (action.actionType) {
         case 'RECEIVE_TENANTS':
           _tenants = action.tenants;
           this.emit('CHANGE');
@@ -17,18 +17,16 @@ class TenantStore extends EventEmitter {
           _tenants.push(action.tenant);
           this.emit('CHANGE');
           break;
+        default :
       }
     });
   }
-
   getAllTenants() {
     return _tenants;
   }
-
   startListening(cb) {
     this.on('CHANGE', cb)
   }
-
   stopListening(cb) {
     this.removeListener('CHANGE', cb)
   }

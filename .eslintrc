@@ -1,10 +1,5 @@
-
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
+  "extends": "airbnb",
   "plugins": [
     "react"
   ],
@@ -65,6 +60,7 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
-  }
+    "react/wrap-multilines": 1,
+    "eslint no-multiple-empty-lines": ["error", { "max": 5 }],
+  },
 }

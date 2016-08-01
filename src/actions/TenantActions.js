@@ -12,7 +12,7 @@ const TenantActions = {
   },
   deleteTenant(id) {
     API.deleteTenant(id);
-  }
+  },
 }
 
 export default TenantActions

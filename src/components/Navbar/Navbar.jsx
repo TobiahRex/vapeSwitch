@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import FontAwesome from 'react-fontawesome'
+
 
 export default class NavBar extends Component {
   render() {
@@ -30,7 +30,7 @@ export default class NavBar extends Component {
               <li><Link to="contact">Contact</Link></li>
               <li><Link to="mods">Mods</Link></li>
               <li><Link to="checkout">Checkout</Link></li>
-              <li><Link to="cart"> <FontAwesome name="shopping-cart" /> asdf</Link></li>
+              <li><Link to="cart"> Cart</Link></li>
             </ul>
           </div>
         </div>
