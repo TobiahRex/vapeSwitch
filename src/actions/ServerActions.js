@@ -1,18 +1,27 @@
 import AppDispatcher from '../AppDispatcher'
 
 const ServerActions = {
-  receiveTenants(tenants) {
+  getLSCartItems() {
     AppDispatcher.dispatch({
-      actionType: 'RECEIVE_TENANTS',
-      tenants
+      type: 'GET_LS_CART_ITEMS',
+    })
+  },
+  addLSCartItem(item) {
+    AppDispatcher.dispatch({
+      item,
+      type: 'ADD_LS_CART_ITEM',
     });
   },
-  receiveOneTenant(tenant) {
+  removeLSCartItem(item) {
     AppDispatcher.dispatch({
-      actionType: 'RECEIVE_ONE_TENANT',
-      tenant
+      item,
+      type: 'REMOVE_LS_CART_ITEM',
     })
-  }
+  },
+  updateLSCartItem(item) {
+    AppDispatcher.dispatch({
+      item,
+      type: 'UPDATE_LS_CART',
+    })
+  },
 }
-
-export default ServerActions
