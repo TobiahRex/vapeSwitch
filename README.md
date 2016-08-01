@@ -1,4 +1,4 @@
-# Vape Switch - Full-Stack REACT & Flux App
+# _Vape Switch_:gtup  Full-Stack REACT & Flux App
 ## A prototype for a rebuild of www.vapeswitch.com for the owner and my good friend, Brian Wilson.
 ### Deployed on Heroku [here](https://vapeswitch.herokuapp.com/).
 
