@@ -13,18 +13,37 @@ class CartStore extends EventEmitter {
     this.addLSCart = this.addLSCart.bind(this);
   }
 
-  getLSCart() {
-    
+  _getLSCart() {
+    try {
+      _items = JSON.parse(cartItems);
+    } catch(err) {
+      console.error(err);
+    };
   }
-  removeOneLSCart(item) {
+
+  _removeOneLSCart(item) {
     _items = _items.map(item => {
-      const index = _items.indexOf(item.uuid);
+      let index = _items.indexOf(item.uuid);
       localStorage.cartItems = JSON.stringify(_items);
       return _items.splice(index, 1);
     });
   }
-  addLSCart(item) {
 
+  _addLSCart(item) {
+    _items = _items.push(item);
+    localStorage.cartItems = JSON.stringify(_items);
+  }
+
+  _updateLSCart(edit_item) {
+    if (!edit_item) console.error('Did not provide required item for EDIT.');
+
+    _items = _items.map(item => {
+      if (item.uuid === edit_item.uuid) {
+        item = edit_item;
+        return item;
+      }
+      return item;
+    });
   }
 
   AppDispatcher.register(action => {
@@ -33,16 +52,25 @@ class CartStore extends EventEmitter {
       case 'GET_CART_ITEMS':
       this.getLSCart();
       break;
+
       case 'ADD_CART_ITEM':
       this.addLSCart(action.item);
       break;
-      case 'DELETE_CART_ITEM':
-      this.removeOneLSCart(action.item);
-      default:
-    }
 
+      case 'REMOVE_CART_ITEM':
+      this.removeOneLSCart(action.item);
+      break;
+
+      case 'UPDATE_CART':
+      this.updateLSCart(action.item);
+      break;
+
+      default :
+    }
   });
 
-
+  getLSCart() {
+    return _items;
+  }
 
 }
