@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tenant from './Tenant';
+import Tenant from './Tenant.jsx';
 
 export default class TenantsDisplay extends Component {
   constructor(props){

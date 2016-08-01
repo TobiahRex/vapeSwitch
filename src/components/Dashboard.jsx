@@ -8,8 +8,8 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div className="text-center">
-        <h1>Welcome to Managed Properties!</h1>
-        <h3>What would you like to do?</h3>
+        <h1>Vape Switch</h1>
+        <h3><i>Make the Switch</i> </h3>
       </div>
     )
   }
