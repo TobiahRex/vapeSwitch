@@ -1,11 +1,11 @@
-# Vape Switch - Full Stack REACT & Flux
+# Vape Switch - Full-Stack REACT & Flux App
 ## A prototype for a rebuild of www.vapeswitch.com for the owner and my good friend, Brian Wilson.
-### Deployed on [Heroku](https://).
+### Deployed on Heroku [here](https://vapeswitch.herokuapp.com/).
 
 ##### Started: 01 August 2016
 * Day 1 : UI Setup, Database Setup & Deployment.
 
-#### Description: E-commerce site for Vaping Products.  
+#### DESCRIPTION: E-commerce site for Vaping Products.  
 * Sendgrid API for Email Notifications.
 * Twilio API for Mobile Notifications.
 * Stripe API for Payment - Visa & Bitcoin.
