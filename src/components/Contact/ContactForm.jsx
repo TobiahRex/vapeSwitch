@@ -13,9 +13,11 @@ export default class ContactForm extends Component {
       body: '',
       copy: true,
     }
+    this.sendEmail = this.sendEmail.bind(this);
   }
 
   sendEmail(event) {
+    console.log('event: ', this.state);
     event.preventDefault();
     if (!this.state.name || !this.state.email || !this.state.body) return;
     // ContactActions.sendEmail(this.state);
@@ -24,7 +26,6 @@ export default class ContactForm extends Component {
 
   render() {
     return (
-
       <div className="col-xs-8 col-xs-offset-2 container">
         <br />
         <form>
@@ -36,10 +37,9 @@ export default class ContactForm extends Component {
               className="form-control"
               id="contact-name"
               value={this.state.name}
-              onChange={e => this.setState({ name: e.taget.value })}
+              onChange={e => this.setState({ name: e.target.value })}
               />
           </div>
-
           <div className="form-group col-xs-6 col-xs-offset-3">
             <label htmlFor="contact-email">Your Email</label>
             <input
@@ -48,10 +48,9 @@ export default class ContactForm extends Component {
               className="form-control"
               id="contact-email"
               value={this.state.email}
-              onChange={e => this.setState({ email: e.taget.value })}
+              onChange={e => this.setState({ email: e.target.value })}
               />
           </div>
-
           <div className="form-group">
             <textarea
               value={this.state.body}
@@ -69,7 +68,8 @@ export default class ContactForm extends Component {
                   <input
                     type="checkbox"
                     id="email-copy-checkbox-inline"
-                    value={this.state.copy} />
+                    onChange={e => this.setState({ copy: e.target.checked })}
+                    checked={this.state.copy} />
                   Yes
                 </label>
               </div>
