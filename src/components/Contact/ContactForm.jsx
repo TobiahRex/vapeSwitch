@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+
+// TODO add ContactActions for Submitting new Email
+
+// import ContactActions from '../../src/actions/ServerActions.js'
 export default class ContactForm extends Component {
 
   constructor(props) {
@@ -9,6 +13,13 @@ export default class ContactForm extends Component {
       body: '',
       copy: true,
     }
+  }
+
+  sendEmail(event) {
+    event.preventDefault();
+    if (!this.state.name || !this.state.email || !this.state.body) return;
+    // ContactActions.sendEmail(this.state);
+    this.setState({ name: '', email: '', body: '', copy: true });
   }
 
   render() {
@@ -64,7 +75,9 @@ export default class ContactForm extends Component {
               </div>
             </div>
           </div>
-          <button className="btn btn-lg btn-primary">Send</button>
+          <button
+            onClick={this.sendEmail}
+            className="btn btn-lg btn-primary">Send</button>
         </form>
       </div>
     )
