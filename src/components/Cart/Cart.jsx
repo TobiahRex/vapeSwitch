@@ -4,6 +4,7 @@ export default class Cart extends Component {
   render() {
     return (
       <h1>All the items</h1>
+      
     )
   }
 }

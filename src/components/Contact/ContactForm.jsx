@@ -16,7 +16,7 @@ export default class ContactForm extends Component {
 
       <div className="col-xs-8 col-xs-offset-2 container">
         <br />
-        <form action="">
+        <form>
           <div className="form-group row col-xs-6 col-xs-offset-3">
             <label htmlFor="contact-name">Your Name</label>
             <input
@@ -57,14 +57,14 @@ export default class ContactForm extends Component {
                 <label>
                   <input
                     type="checkbox"
-                    name="contact-email-copy"
-                    id="email-copy-checkbox"
+                    id="email-copy-checkbox-inline"
                     value={this.state.copy} />
                   Yes
                 </label>
               </div>
             </div>
           </div>
+          <button className="btn btn-lg btn-primary">Send</button>
         </form>
       </div>
     )
