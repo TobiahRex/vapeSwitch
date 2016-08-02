@@ -1,22 +1,53 @@
 import React, { Component } from 'react'
 
+import ProductActions from '../../actions/ProductActions'
+
 export default class Mod extends Component {
 
   constructor(props) {
     super(props);
 
-    this.renderMod = this.renderMod.bind(this);
+    this.state = {
+      type: '',
+      options: [],
+    }
+    this.productClicked = this.productClicked.bind(this);
   }
 
-  renderMod() {
+  productClicked(product) {
+    if (!product) return (console.error('No product information found'));
+    if (this.state.type === 'Add To Cart') {
+      ProductActions.addLSCart(product);
+      return this.setState({ type: '', options: [] });
+    }
     
   }
 
+  buttonType(options) {
+    if (!options) return (<p>TYPE ERROR</p>);
+    if (options.length) {
+      this.setState({ options, type: 'Select Options' });
+    }
+    this.setState({ type: 'Add To Cart' });
+    return this.state.type;
+  }
+
   render() {
-    let { _id, title, description, options } = this.renderMod();
-    return(
+    const product = this.props.mod
+    const { description, image, options } = this.props;
+    return (
       <div className="col-xs-3 col-xs-offset-1">
-        {mod}
+        <img src={image} role="presentation" />
+        <br />
+        <p className="lead">{description}</p>
+        <br />
+        <p>
+          <button
+            onClick={this.productClicked(product, this.state.type)}
+            className="btn btn-info">
+            {this.buttonType(options)}
+          </button>
+        </p>
       </div>
     )
   }
