@@ -24,7 +24,7 @@ const API = {
     .fail(err => console.error(`Get All Mods = 400: ${err}`));
   },
   addNewMod(mod) {
-    post('/api/products/', mod)
+    post('/api/products/mods', mod)
     .done(res => ServerActions.addNewMod(res))
     .fail(err => console.error(`Add new Mod = 400: ${err}`));
   },

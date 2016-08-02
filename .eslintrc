@@ -62,5 +62,6 @@
     "react/sort-comp": 1,
     "react/wrap-multilines": 1,
     "eslint no-multiple-empty-lines": ["error", { "max": 5 }],
+    "new-cap": ["error", { "capIsNew": false }],
   },
 }

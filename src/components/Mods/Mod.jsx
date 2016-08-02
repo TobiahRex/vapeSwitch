@@ -19,13 +19,12 @@ export default class Mod extends Component {
     this.productClicked = this.productClicked.bind(this);
   }
 
-  productClicked(product) {
+  productClicked (product) {
     if (!product) return (console.error('No product information found'));
     if (this.state.type === 'Add To Cart') {
       ProductActions.addLSCart(product);
       return this.setState({ type: '', options: [] });
     }
-
   }
 
   buttonType(options) {

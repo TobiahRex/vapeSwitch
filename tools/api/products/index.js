@@ -1,7 +1,6 @@
 import { Router } from 'express'
-import products from './products/index'
-
+import mods from './mods'
 const router = Router();
-router.use('/products', products);
+router.use('/mods', mods);
 
 export default router

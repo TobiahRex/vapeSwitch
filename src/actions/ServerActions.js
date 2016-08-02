@@ -30,22 +30,22 @@ const ServerActions = {
       type: 'RECEIVE_ALL_MODS',
     });
   },
-  addNewMod(mods) {
+  addNewMod(mod) {
     AppDispatcher.dispatch({
-      mods,
-      type: 'RECEIVE_ALL_MODS',
+      mod,
+      type: 'RECEIVE_ONE_MOD',
     });
   },
   removeMod(mods) {
     AppDispatcher.dispatch({
       mods,
       type: 'RECEIVE_ALL_MODS',
-    })
+    });
   },
   updatedMod(mods) {
     AppDispatcher.dispatch({
       mods,
       type: 'RECEIVE_ALL_MODS',
-    })
+    });
   },
 }

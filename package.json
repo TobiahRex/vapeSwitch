@@ -4,13 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "babel-node tools/srcServer.js",
-    "start": "npm-run-all --parallel test:watch open:src",
-    "open:src": "babel-node tools/srcServer.js",
-    "lint": "esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
-    "test:watch": "npm run test -- --watch"
+    "start": "babel-node tools/srcServer.js"
   },
   "keywords": [],
   "author": "",
@@ -44,11 +38,11 @@
     "bootstrap-loader": "^1.0.10",
     "colors": "^1.1.2",
     "css-loader": "^0.23.1",
-    "eslint": "^2.13.1",
+    "eslint": "^3.2.2",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react": "^6.0.0",
     "eslint-watch": "^2.1.11",
     "expect": "^1.20.1",
     "exports-loader": "^0.6.3",
