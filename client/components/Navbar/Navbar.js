@@ -24,7 +24,7 @@ export default class NavBar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/">Vape Switch</Link>
+            <Link className="navbar-brand" to="/"><img id="navbar-logo" src="client/styles/images/vapeSwitch_icon.png" /></Link>
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,7 +34,7 @@ export default class NavBar extends Component {
               <li><Link to="contact">Contact</Link></li>
               <li><Link to="mods">Mods</Link></li>
               <li><Link to="checkout">Checkout</Link></li>
-              <li><Link to="cart"> Cart</Link></li>
+              <li><Link to="cart"><img src="client/styles/images/shopping-cart.png" /> Cart</Link></li>
             </ul>
           </div>
         </div>

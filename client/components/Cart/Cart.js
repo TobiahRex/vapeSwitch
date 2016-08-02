@@ -7,6 +7,8 @@ export default class Cart extends Component {
     return (
       <div className="container">
         <h1>Cart</h1>
+        <div>          
+        </div>
         <CartTable />
       </div>
     )
