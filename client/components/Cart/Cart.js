@@ -1,2 +1,14 @@
-Parse Error: Line 2: Illegal import declaration
-for file /Users/BICKLEY/temp/ch2.0/jul_CH/jul_hw/01aug16_VapeSwitch/src/components/Cart/Cart.jsx
+import React, { Component } from 'react'
+
+import CartTable from './CartTable.jsx'
+
+export default class Cart extends Component {
+  render() {
+    return (
+      <div className="container">
+        <h1>Cart</h1>
+        <CartTable />        
+      </div>
+    )
+  }
+}

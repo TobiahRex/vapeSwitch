@@ -1,29 +1,28 @@
-'use strict';
+sconst fs = require('fs');
+const path = require('path');
 
-var fs = require('fs');
-var path = require('path');
+const express = require('express');
+const app = express();
 
-var express = require('express');
-var app = express();
-
-var compress = require('compression');
-var layouts = require('express-ejs-layouts');
+const compress = require('compression');
+const layouts = require('express-ejs-layouts');
 
 app.set('layout');
 app.set('view engine', 'ejs');
 app.set('view options', {layout: 'layout'});
 app.set('views', path.join(process.cwd(), '/server/views'));
-
 app.use(compress());
 app.use(layouts);
+app.use((req, res, next) => {
+  res.handle = (err, dbData) => res.status(err ? 400 : 200).send(err || dbData);
+  next();
+});
 app.use('/client', express.static(path.join(process.cwd(), '/client')));
 
-app.disable('x-powered-by');
 
 var env = {
   production: process.env.NODE_ENV === 'production'
 };
-
 if (env.production) {
   Object.assign(env, {
     assets: JSON.parse(fs.readFileSync(path.join(process.cwd(), 'assets.json')))
@@ -36,15 +35,12 @@ app.get('/*', function(req, res) {
   });
 });
 
-var port = Number(process.env.PORT || 3001);
-app.listen(port, function () {
-  console.log('server running at localhost:3001, go refresh and see magic');
-});
+var PORT = process.env.PORT || 3001;
+app.listen(PORT, err => console.log(err || `Server @ ${PORT}`));
 
 if (env.production === false) {
   var webpack = require('webpack');
   var WebpackDevServer = require('webpack-dev-server');
-
   var webpackDevConfig = require('./webpack.config.development');
 
   new WebpackDevServer(webpack(webpackDevConfig), {
@@ -58,11 +54,10 @@ if (env.production === false) {
       'Access-Control-Allow-Origin': 'http://localhost:3001',
       'Access-Control-Allow-Headers': 'X-Requested-With'
     }
-  }).listen(3000, 'localhost', function (err) {
+  }).listen(3000, 'localhost', (err) => {
     if (err) {
-      console.log(err);
+      console.error(err);
     }
-
     console.log('webpack dev server listening on localhost:3000');
   });
 }
