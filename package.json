@@ -30,10 +30,10 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-fontawesome": "^1.1.0",
-    "react-router": "^2.4.1"
+    "react-router": "^2.4.1",
+    "babel-cli": "^6.9.0",
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-react-display-name": "^2.0.0",
