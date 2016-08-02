@@ -30,7 +30,7 @@ export default class Mods extends Component {
     this.setState(_getComponentState());
   }
 
-  // ModsDisplay will be a DIB render 
+  // ModsDisplay will be a DIB render
 
   render() {
     return (
@@ -40,7 +40,6 @@ export default class Mods extends Component {
           <ModsDisplay mods={this.state.mods} />
         </div>
       </div>
-
     )
   }
 }

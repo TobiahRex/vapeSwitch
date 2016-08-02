@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 import ProductActions from '../../actions/ProductActions'
 
+// TODO Mod Button type
+// Find  a way to dynamically generate either a <button> that adds to the LS cigarettes
+// OR generates a <a className='btn'> that will send them to the details product page.
+
+
 export default class Mod extends Component {
 
   constructor(props) {
@@ -20,7 +25,7 @@ export default class Mod extends Component {
       ProductActions.addLSCart(product);
       return this.setState({ type: '', options: [] });
     }
-    
+
   }
 
   buttonType(options) {
