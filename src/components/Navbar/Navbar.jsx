@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+// TODO Add a Footer
+// Include a Copyright & Accepted Payment methods
+
+// TODO Include 'Are you over 18?' Modal
 
 export default class NavBar extends Component {
   render() {

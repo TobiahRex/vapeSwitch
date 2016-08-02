@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ModStore from '../../stores/ModStore.js'
+import ModStore from '../stores/ModStore.js'
 import ProductActions from '../../actions/ProductActions.js'
 import ModsDisplay from './ModsDisplay.jsx'
 

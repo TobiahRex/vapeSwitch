@@ -1,56 +1,47 @@
 import { get, post, ajax } from 'jquery'
-
+import AppDispatcher from './AppDispatcher'
 import ServerActions from './actions/ServerActions'
 
 const API = {
-  getAllTenants() {
-    get('/api/tenants')
-      .done(response => { ServerActions.receiveTenants(response) })
+  // Local Storage API
+  getLSItems() {
+    ServerActions.getLSCartItems();
+  },
+  addLSItem() {
+    ServerActions.addLSCartItem();
+  },
+  removeLSItem() {
+    ServerActions.removeLSCartItem();
+  },
+  updateLSItem() {
+    ServerActions.updateLSCartItem();
   },
 
-  addNewTenant(tenant) {
-    post('/api/tenants', tenant)
-      .done(response => { ServerActions.receiveOneTenant(response) })
+  // Backend API
+  getAllMods() {
+    get('/api/products/mods')
+    .done(res => ServerActions.getAllMods(res))
+    .fail(err => console.error(`Get All Mods = 400: ${err}`));
   },
-
-  updateTenant(tenant) {
-    // ajax({
-    //   url: '/api/tenants',
-    //   method: 'PUT',
-    //   contentType: 'application/json',
-    //   data: JSON.stringify(tenant),
-    //   success: (res) => {
-    //     console.log(res);
-    //   }
-    // })
-    fetch('/api/tenants', {
-      method: 'PUT',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      }),
-      body: JSON.stringify(tenant)
+  addNewMod(mod) {
+    post('/api/products/', mod)
+    .done(res => ServerActions.addNewMod(res))
+    .fail(err => console.error(`Add new Mod = 400: ${err}`));
+  },
+  removeMod(id) {
+    ajax({
+      url: `/api/products/mods/${id}`,
+      type: 'DELETE',
     })
-      .then((res) => res.json())
-      .then(data => {
-        console.log(data);
-      })
+    .done(res => ServerActions.removeMod(res))
+    .fail(err => console.error(err));
   },
-
-  deleteTenant(tenantID) {
-    fetch('/api/tenants/' + tenantID, {
-      method: 'DELETE'
+  updateMod(id) {
+    ajax({
+      url: `/api/products/mods/${id}`,
+      type: 'PUT',
     })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        ServerActions.receiveTenants(data)
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
+    .done(res => ServerActions.updatedMod(res))
+    .fail(err => console.error(err));
+  },
 }
-
-export default API

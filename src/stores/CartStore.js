@@ -17,15 +17,17 @@ class CartStore extends EventEmitter {
     try {
       _items = JSON.parse(cartItems);
     } catch(err) {
+      _items = [];
       console.error(err);
     };
   }
 
   _removeOneLSCart(item) {
-    _items = _items.map(item => {
-      let index = _items.indexOf(item.uuid);
+    _items = _items.map((_item, i) => {
+      if (_item.uuid === item.uuid) {
+        _items.splice(index, 1);
+      }
       localStorage.cartItems = JSON.stringify(_items);
-      return _items.splice(index, 1);
     });
   }
 
@@ -49,20 +51,24 @@ class CartStore extends EventEmitter {
   AppDispatcher.register(action => {
 
     switch(action.type) {
-      case 'GET_CART_ITEMS':
+      case 'GET_LS_CART_ITEMS':
       this.getLSCart();
+      this.emit('CHANGE');
       break;
 
-      case 'ADD_CART_ITEM':
+      case 'ADD_LS_CART_ITEM':
       this.addLSCart(action.item);
+      this.emit('CHANGE');
       break;
 
-      case 'REMOVE_CART_ITEM':
+      case 'REMOVE_LS_CART_ITEM':
       this.removeOneLSCart(action.item);
+      this.emit('CHANGE');
       break;
 
-      case 'UPDATE_CART':
+      case 'UPDATE_LS_CART':
       this.updateLSCart(action.item);
+      this.emit('CHANGE');
       break;
 
       default :

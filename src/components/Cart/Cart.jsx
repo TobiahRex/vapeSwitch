@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
+import CartTable from './CartTable.jsx'
+
 export default class Cart extends Component {
   render() {
     return (
-      <h1>All the items</h1>
-      
+      <div className="container">
+        <h1>Cart</h1>
+        <CartTable />        
+      </div>
     )
   }
 }
