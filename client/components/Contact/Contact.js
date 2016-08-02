@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ContactForm from './ContactForm.jsx'
+import ContactForm from './ContactForm.js'
 
 export default class Properties extends Component {
   render() {

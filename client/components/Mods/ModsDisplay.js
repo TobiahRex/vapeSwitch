@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Mod from './Mod.jsx'
+import Mod from './Mod.js'
 
 export default class ModsDisplay extends Component {
   render() {

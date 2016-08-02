@@ -1,9 +1,7 @@
-sconst fs = require('fs');
+const fs = require('fs');
 const path = require('path');
-
 const express = require('express');
 const app = express();
-
 const compress = require('compression');
 const layouts = require('express-ejs-layouts');
 

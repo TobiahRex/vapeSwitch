@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import NavBar from './Navbar/Navbar.jsx'
+import NavBar from './Navbar/Navbar.js'
 
 export default class App extends Component {
   constructor(props){

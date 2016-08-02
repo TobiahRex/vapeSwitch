@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import ModStore from '../../stores/ModStore.js'
 import ProductActions from '../../actions/ProductActions.js'
-import ModsDisplay from './ModsDisplay.jsx'
+import ModsDisplay from './ModsDisplay.js'
 
 function _getComponentState() {
   return { mods: ModStore.getAllMods() }

@@ -17,7 +17,10 @@ config.plugins = config.plugins.concat([
 ]);
 
 config.module.loaders = config.module.loaders.concat([
-  {test: /\.jsx?$/, loaders: [ 'react-hot', 'babel'], exclude: /node_modules/}
+  { test: /\.jsx?$/,
+    loaders: [ 'react-hot', 'babel'],
+    exclude: /node_modules/
+  }
 ]);
 
 module.exports = config;

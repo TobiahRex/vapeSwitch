@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const uuid = require('uuid');
 
-// import CartStore from '../../src/stores/CartStore.jsx'
+// import CartStore from '../../src/stores/CartStore.js'
 
 function _getComponentState() {
   return {
