@@ -46,3 +46,5 @@ const API = {
     .fail(err => console.error(err));
   },
 }
+
+export default API

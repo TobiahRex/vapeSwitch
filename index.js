@@ -6,7 +6,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const compress = require('compression');
-const layouts = require('express-ejs-layouts');
+const layouts = r<asdf></asdf><asdf></asdf>equire('express-ejs-layouts');
 const mongoose = require('mongoose');
 
 app.set('layout');
