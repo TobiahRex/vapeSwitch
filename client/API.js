@@ -19,8 +19,9 @@ const API = {
 
   // Backend API
   getAllMods() {
+    console.log('sending request for all mods');
     get('/api/products/mods')
-    .done(res => ServerActions.getAllMods(res))
+    .done(res => {ServerActions.getAllMods(res)})
     .fail(err => console.error(`Get All Mods = 400: ${err}`));
   },
   addNewMod(mod) {

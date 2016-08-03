@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
+
 
 export default class Dashboard extends Component {
   render() {
@@ -6,24 +8,15 @@ export default class Dashboard extends Component {
       <div className="text-center">
         <img id="dashboard-jumbotron" src="client/styles/images/vapeswitch_blank.png" />
         <h3><i>Make the Switch</i></h3>
+        <div className="col-xs-4 col-xs-offset-4">
 
-      <ul className="nav nav-pills">
-          <li className="active"><a href="#">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li className="disabled"><a href="#">Disabled</a></li>
-          <li className="dropdown open">
-            <a className="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
-              Dropdown <span className="caret"></span>
-          </a>
-          <ul className="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li className="divider"></li>
-            <li><a href="#">Separated link</a></li>
+          <ul className="nav nav-pills">
+            <li><Link to="about">About</Link></li>
+            <li><Link to="mods">Mods</Link></li>
+            <li><Link to="contact">Contact</Link></li>
           </ul>
-        </li>
-      </ul>
-    </div>)
+        </div>
+      </div>
+    )
   }
 }

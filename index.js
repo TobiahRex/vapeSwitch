@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const compress = require('compression');
 const layouts = require('express-ejs-layouts');
-
+const mongoose = require('mongoose');
 
 app.set('layout');
 app.set('view engine', 'ejs');
@@ -20,6 +20,12 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/client', express.static(path.join(process.cwd(), '/client')));
+app.use('/api', require('./server/api/index'));
+app.get('/*', (req, res) => {
+  res.render('index', {
+    env: env
+  });
+});
 
 
 var env = {
@@ -31,12 +37,7 @@ if (env.production) {
   });
 }
 
-app.get('/*', function(req, res) {
-  res.render('index', {
-    env: env
-  });
-});
-
+mongoose.connect(MONGOURL, (err) => console.log(err || `MONGO @ ${MONGOURL}`));
 app.listen(PORT, err => console.log(err || `Server @ ${PORT}`));
 
 if (env.production === false) {

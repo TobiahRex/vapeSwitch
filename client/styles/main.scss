@@ -1,6 +1,9 @@
 body {
   background-color: #8c8c8c;
 }
+div#contact-container {
+  margin-bottom: 100px;
+}
 nav.navbar {
   background-color: #09243f;
 }
@@ -15,9 +18,9 @@ nav.navbar {
   position: absolute;
   bottom: 0;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 50px;
   font-size: 22px;
-  height: 251px;
+  height: 100px;
   background-color: #09243f;
   color: #efefef;
 }

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose');
 
 const modSchema = new mongoose.Schema({
   title: {
@@ -52,4 +52,4 @@ modSchema.statics.updateMod = (id, body, cb) => {
   });
 }
 const Mod = mongoose.model('Mod', modSchema);
-export default Mod
+module.exports = Mod;
