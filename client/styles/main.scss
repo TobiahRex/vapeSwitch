@@ -1,4 +1,26 @@
+body {
+  background-color: #8c8c8c;
+}
+nav.navbar {
+  background-color: #09243f;
+}
 #navbar-logo {
   width: 100px;
   margin-top: -20px;
+}
+#navbar-cart {
+  width: 35px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 22px;
+  height: 251px;
+  background-color: #09243f;
+  color: #efefef;
+}
+#copyright-banner {
+  font-size: 12px;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import NavBar from './Navbar/Navbar.js'
-
+import Footer from './Footer/Footer.js'
 export default class App extends Component {
   constructor(props){
     super(props);
@@ -14,6 +14,7 @@ export default class App extends Component {
         <div className="container">
           {this.props.children}
         </div>
+        <Footer />
       </div>
     )
   }
