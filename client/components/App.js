@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import NavBar from './Navbar/Navbar.js'
 import Footer from './Footer/Footer.js'
 export default class App extends Component {
@@ -8,6 +7,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('this.props: ', this.props);
     return (
       <div id="main-container">
         <div className="text-center">

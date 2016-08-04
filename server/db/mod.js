@@ -22,7 +22,7 @@ const modSchema = new mongoose.Schema({
     popularity: { type: Number },
     rating: { type: Number },
     dateAdded: { type: Date, default: Date.now },
-    style: [{ type: String }],
+    styles: [{ type: String }],
     colors: [{ type: String }],
     sizes: [{ type: String }],
   },

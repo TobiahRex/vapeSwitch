@@ -1,6 +1,7 @@
 import API from '../API'
 
 const ProductActions = {
+  
   getAllMods() {
     API.getAllMods();
   },

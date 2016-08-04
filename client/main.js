@@ -9,7 +9,7 @@ import Contact from './components/Contact/Contact.js'
 import Mods from './components/Mods/Mods.js'
 import Cart from './components/Cart/Cart.js'
 import Checkout from './components/Checkout/Checkout.js'
-
+import modDetails from './components/Mods/modDetails.js'
 
 render(
     <Router history={browserHistory}>
@@ -17,9 +17,10 @@ render(
         <IndexRoute component={Dashboard} />
         <Route path="about" component={About} />
         <Route path="contact" component={Contact} />
-        <Route path="Mods" component={Mods} />
-        <Route path="Cart" component={Cart} />
-        <Route path="Checkout" component={Checkout} />
+        <Route path="mods" component={Mods} />
+        <Route path="cart" component={Cart} />
+        <Route path="checkout" component={Checkout} />
+        <Route path="mods/:id" component={modDetails} />
       </Route>
     </Router>,
   document.getElementById('js-main')

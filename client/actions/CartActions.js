@@ -4,8 +4,8 @@ const CartActions = {
   getLSCartItems() {
     API.getLSCartItems();
   },
-  addLSCartItem() {
-    API.addLSCartItem();
+  addLSCartItem(item) {
+    API.addLSCartItem(item);
   },
   removeLSCartItem() {
     API.removeLSCartItem();

@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
-
+import CartStore from '../../stores/CartStore.js'
 const uuid = require('uuid');
-
-// import CartStore from '../../src/stores/CartStore.js'
-
-function _getComponentState() {
-  return {
-    // items: CartStore.getItems(),
-  }
-}
 
 export default class CartTable extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = _getComponentState();
+    this.state = {
+      items: CartStore.getCart(),
+    }
     this.generateItems = this.generateItems.bind(this);
     this.subTotal = this.subTotal.bind(this);
   }
@@ -45,6 +39,7 @@ export default class CartTable extends Component {
 
   render() {
     let items = this.generateItems();
+    console.log('this.state.items: ', this.state.items);
     return (
       <table className="table table-striped table-hover ">
         <thead>
