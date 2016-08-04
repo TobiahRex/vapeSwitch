@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartStore from '../../stores/CartStore.js'
+import CartActions from '../../actions/CartActions'
 import toastr from 'toastr'
 const uuid = require('uuid');
 
@@ -8,60 +9,27 @@ export default class CartTable extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      items: this.props.items
-    }
-
     this.generateItems = this.generateItems.bind(this);
     this.subTotal = this.subTotal.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
-    this.emptyCart = this.emptyCart.bind(this);
   }
-
-  emptyCart(item) {
-    
-  }
-
 
   decreaseQty(item) {
-    console.log('item: ', item);
-    let items = this.state.items.map(_item => {
-      if (_item._id === item._id){
-        _item.quantity -= 1;
-        if(_item.quantity > 0) {
-          return _item;
-        } else {
-          toastr.info(`${_item.title} ${_item.model} has been removed from your cart.`, 'Removed From Cart');
-          return null
-        }
-      } else {
-        return _item;
-      }
-    });
-    this.setState({ items });
+    CartActions.removeLSCartItem(item);
   }
 
   increaseQty(item) {
-    console.log('item: ', item);
-    let items = this.state.items.map(_item => {
-      if (_item._id === item._id){
-        _item.quantity += 1;
-        return _item;
-      } else {
-        return _item;
-      }
-    });
-    this.setState({ items });
+    CartActions.addLSCartItem(item);
   }
 
   generateItems() {
-    if (!this.state.items) return (<tr className="lead">Your Cart is Empty</tr>);
-    const items = this.state.items.map((stateItem, i) => {
+    if (!this.props.items) return (<tr className="lead">Your Cart is Empty</tr>);
+    const items = this.props.items.map((stateItem, i) => {
       console.log('stateItem: ', stateItem);
       const item = stateItem;
       return (
-        <tr key={uuid()}>
+        <tr key={stateItem._id}>
           <td className="text-center"><div id="cart-index">{i + 1}</div></td>
           <td className="text-center">
             <div id="cart-product" className="row">
@@ -71,7 +39,7 @@ export default class CartTable extends Component {
           </td>
           <td className="text-center">
             <div id="quantity">
-              <span id="cart-quantity">{item.quantity}    </span>
+              <span id="cart-quantity">{this.props.items.length}</span>
               <div className="btn-group">
                 <button onClick={this.decreaseQty.bind(null, item)} href="" className="btn btn-info">-</button>
 
@@ -99,8 +67,10 @@ export default class CartTable extends Component {
   }
 
   render() {
-    let items = this.generateItems();
-    console.log('render items: ', items);
+    let { items } = this.props;
+    console.log('items: ', items);
+    let itemCards = this.generateItems();
+    console.log('render itemCards: ', itemCards);
     return (
       <table className="table table-hover ">
         <thead>
@@ -113,7 +83,7 @@ export default class CartTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {items}
+          {itemCards}
         </tbody>
       </table>
     )

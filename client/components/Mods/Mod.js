@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { browserHistory, Link } from 'react-router'
 import CartActions from '../../actions/CartActions'
 import toastr from 'toastr'
+import uuid from 'uuid'
 
 export default class Mod extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class Mod extends Component {
     if (!mod) return (console.error('No mod information found'));
 
     if (type === 'Add To Cart'){
+      mod.uuid = uuid();
       CartActions.addLSCartItem(mod);
       toastr.success(`${mod.title}
 

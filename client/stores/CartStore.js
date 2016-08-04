@@ -7,7 +7,6 @@ class CartStore extends EventEmitter {
 
   constructor(props) {
     super(props);
-
     this.removeOneLSCart = this._updateLSCart.bind(this);
 
     AppDispatcher.register(action => {

@@ -12,14 +12,17 @@ const API = {
   addLSCartItem(item) {
     let ls = this.getLocalStorage();
     ls.push(item);
-    this.writeToLocalStorage(ls, (newLs) => {
-      ServerActions.updateLSCart(newLs);
-    });
+    this.writeToLocalStorage(ls);
   },
   removeLSCartItem(item) {
-    this.removeFrLocalStorage(item, (err, newLs) => {
-      err ? console.error(err) : ServerActions.updateLSCart(newLs);
+    let ls = this.getLocalStorage();
+    ls.forEach((lsItem, i) => {
+      if (lsItem.uuid === item.uuid) ls.splice(i, 1);
     });
+
+    this.writeToLocalStorage(ls);
+    let newLs = this.getLocalStorage();
+    ServerActions.updateLSCart(newLs);
   },
   updateLSCartItem(item) {
     let ls = this.getLocalStorage();
@@ -63,24 +66,15 @@ const API = {
       ls = JSON.parse(localStorage.cart);
       console.log('ls: ', ls);
     } catch(err) {
-      localStorage.cart = JSON.stringify([]);    
+      localStorage.cart = JSON.stringify([]);
     }
     return ls;
   },
-  writeToLocalStorage(data, cb){
+  writeToLocalStorage(data){
     let ls = data;
     localStorage.cart = JSON.stringify(ls);
     let newLs = this.getLocalStorage();
-    cb(newLs);
-  },
-  removeFrLocalStorage(data, cb){
-    let ls = this.getLocalStorage();
-    if (ls.indexOf(data) < 0) return cb('That item was not found.');
-
-    ls = ls.filter(lsItem => lsItem !== data);
-    this.writeToLocalStorage(ls);
-    let newLs = this.getLocalStorage();
-    cb(null, newLs);
+    ServerActions.updateLSCart(newLs);
   }
 }
 

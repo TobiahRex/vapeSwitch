@@ -7,11 +7,11 @@ const CartActions = {
   addLSCartItem(item) {
     API.addLSCartItem(item);
   },
-  removeLSCartItem() {
-    API.removeLSCartItem();
+  removeLSCartItem(item) {
+    API.removeLSCartItem(item);
   },
-  updateLSCartItem() {
-    API.updateLSCartItem();
+  updateLSCartItem(item) {
+    API.updateLSCartItem(item);
   },
 }
 
