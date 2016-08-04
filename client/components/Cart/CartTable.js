@@ -22,11 +22,24 @@ export default class CartTable extends Component {
       const item = stateItem;
       return (
         <tr key={uuid()}>
-          <td>{i + 1}</td>
-          <td>{item.title} {item.model}</td>
-          <td>{item.quantity}</td>
-          <td>{`\u00a9 ${item.newPrice}`}</td>
-          <td>{this.subTotal(item.quantity, item.newPrice)}</td>
+          <td className="text-center">{i + 1}</td>
+          <td className="text-center">
+            <div id="cart-product" className="row">
+              <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0]} />
+              <span id="cart-product-desc" className="col-xs-8">{item.title} {item.model}</span>
+            </div>
+          </td>
+          <td className="text-center">
+            <div id="quantity">
+              <span id="cart-quantity">{item.quantity}</span>
+              <div className="btn-group">
+                <a href="" className="btn btn-info">-</a>
+                <a href="" className="btn btn-info">+</a>
+              </div>
+            </div>
+          </td>
+          <td className="text-center">{`\u00a5 ${item.newPrice}`}</td>
+          <td className="text-center">{this.subTotal(item.quantity, item.newPrice)}</td>
         </tr>
       )
     })
@@ -37,7 +50,7 @@ export default class CartTable extends Component {
   subTotal(qty, price) {
     console.log('qty: ', qty, '\nprice: ', price);
     if (!qty || !price) return ('Quantity or Price is Empty.');
-    return `$ ${qty * price}`;
+    return `\u00a5 ${qty * price}`;
   }
 
   render() {
