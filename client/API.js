@@ -6,8 +6,8 @@ import ServerActions from './actions/ServerActions'
 const API = {
   // Local Storage API
   getLSCartItems() {
-    let ls = this.getLocalStorage();
-    ServerActions.updateLSCart(ls);
+    let lsItems = this.getLocalStorage();
+    ServerActions.updateLSCart(lsItems);
   },
   addLSCartItem(item) {
     let ls = this.getLocalStorage();

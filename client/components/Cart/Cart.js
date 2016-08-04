@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import CartStore from '../../stores/CartStore.js'
-import ProductActions from '../../actions/ProductActions.js'
+import CartActions from '../../actions/ProductActions.js'
 import CartTable from './CartTable.js'
 
 function _getComponentState() {
@@ -18,7 +18,7 @@ export default class Cart extends Component {
   }
 
   componentDidMount() {
-    ProductActions.getAllMods();
+    CartActions.getAllMods();
     CartStore.on('CHANGE', this._onChange);
   }
 

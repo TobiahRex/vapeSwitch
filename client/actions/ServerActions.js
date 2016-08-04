@@ -1,12 +1,6 @@
 import AppDispatcher from '../AppDispatcher'
 
 const ServerActions = {
-  getLSCartItems(items) {
-    AppDispatcher.dispatch({
-      items,
-      type: 'UPDATE_LS_CART',
-    });
-  },
   updateLSCart(items) {
     AppDispatcher.dispatch({
       items,
