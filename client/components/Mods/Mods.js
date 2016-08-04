@@ -35,7 +35,6 @@ export default class Mods extends Component {
   render() {
     return (
       <div className="container">
-        <h1>All the Mods</h1>
         <div className="row mod-products">
           <ModsDisplay mods={this.state.mods} />
         </div>
