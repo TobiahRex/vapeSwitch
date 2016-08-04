@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 // TODO Implement Guest checkout option
 
 // TODO Order Progress Bar
@@ -11,7 +12,31 @@ import React, { Component } from 'react'
 export default class Checkout extends Component {
   render() {
     return (
-      <h1>Checkout</h1>
+      <div id="checkout-main">
+        <div id="main-header">
+
+        </div>
+        <div id="main-content">
+
+        </div>
+        <div id="main-footer">
+
+        </div>
+      </div>
     )
   }
 }
+<ul class="breadcrumb ">
+    <li class="breadcrumb__item breadcrumb__item--completed">
+      <Link class="breadcrumb__link" to="cart">Cart</Link>
+    </li>
+    <li class="breadcrumb__item breadcrumb__item--current">
+      Customer information
+    </li>
+    <li class="breadcrumb__item breadcrumb__item--blank">
+      Shipping method
+    </li>
+    <li class="breadcrumb__item breadcrumb__item--blank">
+      Payment method
+    </li>
+</ul>

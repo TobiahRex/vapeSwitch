@@ -28,6 +28,7 @@ export default class CartTable extends Component {
     const items = this.props.items.map((stateItem, i) => {
       console.log('stateItem: ', stateItem);
       const item = stateItem;
+      stateItem.uuid = uuid()
       return (
         <tr key={i}>
           <td className="text-center"><div id="cart-index">{i + 1}</div></td>
@@ -56,12 +57,10 @@ export default class CartTable extends Component {
         </tr>
       )
     })
-    console.log('items: ', items);
     return items;
   }
 
   subTotal(qty, price) {
-    console.log('qty: ', qty, '\nprice: ', price);
     if (!qty || !price) return ('Quantity or Price is Empty.');
     return `\u00a5 ${qty * price}`;
   }
@@ -69,7 +68,6 @@ export default class CartTable extends Component {
   render() {
     let { items } = this.props;
     let itemCards = this.generateItems();
-    console.log(items, itemCards);
     return (
       <table className="table table-hover ">
         <thead>
