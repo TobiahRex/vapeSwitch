@@ -13,6 +13,18 @@ export default class CartTable extends Component {
 
     this.generateItems = this.generateItems.bind(this);
     this.subTotal = this.subTotal.bind(this);
+    this.decreaseQty = this.decreaseQty.bind(this);
+    this.increaseQty = this.increaseQty.bind(this);
+  }
+
+  decreaseQty(item) {
+    let newQty = item.quantity -= 1;
+    this.setState({ this.state.items.quantity: newQty });
+  }
+
+  increaseQty(item) {
+    let newQty = item.quantity += 1;
+    this.setState({ this.state.items.quantity: newQty });
   }
 
   generateItems() {
@@ -31,15 +43,20 @@ export default class CartTable extends Component {
           </td>
           <td className="text-center">
             <div id="quantity">
-              <span id="cart-quantity">{item.quantity}</span>
+              <span id="cart-quantity">{item.quantity}    </span>
               <div className="btn-group">
-                <a href="" className="btn btn-info">-</a>
-                <a href="" className="btn btn-info">+</a>
+                <button onClick={this.decreaseQty.bind(null, item)} href="" className="btn btn-info">-</button>
+
+                <button onClick={this.increaseQty.bind(null, item)} href="" className="btn btn-info">+</button>
               </div>
             </div>
           </td>
-          <td className="text-center">{`\u00a5 ${item.newPrice}`}</td>
-          <td className="text-center">{this.subTotal(item.quantity, item.newPrice)}</td>
+          <td className="text-center">
+            <div id="cart-price">{`\u00a5 ${item.newPrice}`}</div>
+          </td>
+          <td className="text-center">
+            <div id="cart-subtotal">{this.subTotal(item.quantity, item.newPrice)}</div>
+          </td>
         </tr>
       )
     })
