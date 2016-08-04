@@ -8,23 +8,25 @@ export default class CartTable extends Component {
     super(props);
 
     this.state = {
-      items: CartStore.getCart(),
+      items: this.props.items
     }
+
     this.generateItems = this.generateItems.bind(this);
     this.subTotal = this.subTotal.bind(this);
   }
 
   generateItems() {
     if (!this.state.items) return (<tr className="lead">Your Cart is Empty</tr>);
-    const items = this.state.items.map(stateItem => {
+    const items = this.state.items.map((stateItem, i) => {
       console.log('stateItem: ', stateItem);
       const item = stateItem;
       return (
         <tr key={uuid()}>
-          <td>{item.description}</td>
+          <td>{i + 1}</td>
+          <td>{item.title} {item.model}</td>
           <td>{item.quantity}</td>
-          <td>{item.price}</td>
-          <td>{this.subTotal(item.quantity, item.price)}</td>
+          <td>{`\u00a9 ${item.newPrice}`}</td>
+          <td>{this.subTotal(item.quantity, item.newPrice)}</td>
         </tr>
       )
     })
@@ -45,11 +47,11 @@ export default class CartTable extends Component {
       <table className="table table-striped table-hover ">
         <thead>
           <tr>
-            <th className="text-center">#</th>
-            <th className="text-center">Product</th>
-            <th className="text-center">Quantity</th>
-            <th className="text-center">Price</th>
-            <th className="text-center">Sub Total</th>
+            <th className="text-center text-success">#</th>
+            <th className="text-center text-success">Product</th>
+            <th className="text-center text-success">Quantity</th>
+            <th className="text-center text-success">Price</th>
+            <th className="text-center text-success">Sub Total</th>
           </tr>
         </thead>
         <tbody>
