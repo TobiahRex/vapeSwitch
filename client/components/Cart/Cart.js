@@ -27,6 +27,7 @@ export default class Cart extends Component {
   }
 
   _onChange() {
+    console.log('are you firing?');
     this.setState(_getComponentState());
   }
 

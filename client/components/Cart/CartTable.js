@@ -69,7 +69,7 @@ export default class CartTable extends Component {
     let { items } = this.props;
     let itemCards = this.generateItems();
     return (
-      <table className="table table-hover ">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th className="text-center text-success">#</th>

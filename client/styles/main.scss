@@ -65,3 +65,43 @@ div#quantity {
 #checkout-main-header {
   font-size: 12px;
 }
+div.order-summary-section-content {
+  padding-bottom: 20px;
+  border-top-width: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid darkgray;
+}
+
+div.order-summary-discount {
+  height: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid darkgray;
+}
+
+div.order-summary-discount-input {
+  padding-right: 0px;
+}
+
+table.order-summary-table {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+tbody.order-summary-tbody {
+  border-bottom: 1px solid darkgray;
+}
+
+td.order-summary-name {
+  padding-bottom: 20px;
+}
+td.order-summary-price {
+  padding-bottom: 20px;
+}
+
+td.order-summary-name {
+  padding-top: 20px;
+}
+td.order-summary-price {
+  padding-top: 20px;
+}
