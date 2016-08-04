@@ -10,7 +10,6 @@ export default class Mod extends Component {
     this.generateButtonType = this.generateButtonType.bind(this);
   }
   productClicked(mod, type) {
-    console.log('mod: ', mod, '\ntype: ', type);
     if (!mod) return (console.error('No mod information found'));
 
     if (type === 'Add To Cart'){
@@ -21,9 +20,9 @@ export default class Mod extends Component {
   }
   generateButtonType(mod){
     if (mod.options.style.length || mod.options.colors.length || mod.options.sizes.length) {
-      return 'Add To Cart'
-    } else {
       return 'Select Options'
+    } else {
+      return 'Add To Cart'
     }
   }
   render(){
