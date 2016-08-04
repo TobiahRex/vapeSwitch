@@ -7,7 +7,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log('this.props: ', this.props);
     return (
       <div id="main-container">
         <div className="text-center">

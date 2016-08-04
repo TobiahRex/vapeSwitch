@@ -63,8 +63,7 @@ const API = {
       ls = JSON.parse(localStorage.cart);
       console.log('ls: ', ls);
     } catch(err) {
-      console.error('Could not retrieve localStorage: ', err);
-      ls = [];
+      localStorage.cart = JSON.stringify([]);    
     }
     return ls;
   },

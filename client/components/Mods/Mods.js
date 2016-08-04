@@ -18,7 +18,6 @@ export default class Mods extends Component {
   }
 
   componentDidMount() {
-    localStorage.cart = JSON.stringify([]);
     ProductActions.getAllMods();
     ModStore.on('CHANGE', this._onChange);
   }
