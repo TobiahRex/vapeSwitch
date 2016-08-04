@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { browserHistory, Link } from 'react-router'
 import CartActions from '../../actions/CartActions'
+import toastr from 'toastr'
 
 export default class Mod extends Component {
   constructor(props) {
@@ -14,6 +15,9 @@ export default class Mod extends Component {
 
     if (type === 'Add To Cart'){
       CartActions.addLSCartItem(mod);
+      toastr.success(`${mod.title}
+
+        as added to your cart`, 'Added To Cart');
     } else {
       browserHistory.push(`mods/${mod._id}`);
     }
@@ -28,13 +32,14 @@ export default class Mod extends Component {
   render(){
     let buttonText = this.generateButtonType(this.props.mod);
     console.log('button: ', buttonText);
-    let { images, description } = this.props.mod;
+    let { images, description, title, model } = this.props.mod;
     return (
       <div className="col-xs-3 col-xs-offset-1">
+        <h3>{title} <br /> {model}</h3>
         <img id="mod-main-img" src={images[0]} role="presentation" />
-        <br />
+        <hr />
         <p id="mod-main-desc" className="lead">{description}</p>
-        <br />
+        <hr />
         <button className="btn btn-info" onClick={ () => this.productClicked(this.props.mod, buttonText)}>{buttonText}</button>
       </div>
     )
