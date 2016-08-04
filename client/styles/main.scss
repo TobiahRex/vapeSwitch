@@ -33,10 +33,11 @@ img#mod-main-img {
 }
 #cart-product-desc {
   margin-top: 50px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 img#cart-product-img {
+  margin-top: 10px;
   width: 100px;
 }
 
@@ -45,12 +46,16 @@ div#quantity {
 }
 
 #cart-quantity {
-  font-size: 16px;
+  padding-right: 20px;
+  font-size: 18px;
 }
 
 #cart-price {
   margin-top: 50px;
 }
 #cart-subtotal {
+  margin-top: 50px;
+}
+#cart-index {
   margin-top: 50px;
 }

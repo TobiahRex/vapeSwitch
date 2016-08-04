@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartStore from '../../stores/CartStore.js'
+import toastr from 'toastr'
 const uuid = require('uuid');
 
 export default class CartTable extends Component {
@@ -15,16 +16,43 @@ export default class CartTable extends Component {
     this.subTotal = this.subTotal.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
+    this.emptyCart = this.emptyCart.bind(this);
   }
 
+  emptyCart(item) {
+    
+  }
+
+
   decreaseQty(item) {
-    let newQty = item.quantity -= 1;
-    this.setState({ this.state.items.quantity: newQty });
+    console.log('item: ', item);
+    let items = this.state.items.map(_item => {
+      if (_item._id === item._id){
+        _item.quantity -= 1;
+        if(_item.quantity > 0) {
+          return _item;
+        } else {
+          toastr.info(`${_item.title} ${_item.model} has been removed from your cart.`, 'Removed From Cart');
+          return null
+        }
+      } else {
+        return _item;
+      }
+    });
+    this.setState({ items });
   }
 
   increaseQty(item) {
-    let newQty = item.quantity += 1;
-    this.setState({ this.state.items.quantity: newQty });
+    console.log('item: ', item);
+    let items = this.state.items.map(_item => {
+      if (_item._id === item._id){
+        _item.quantity += 1;
+        return _item;
+      } else {
+        return _item;
+      }
+    });
+    this.setState({ items });
   }
 
   generateItems() {
@@ -34,7 +62,7 @@ export default class CartTable extends Component {
       const item = stateItem;
       return (
         <tr key={uuid()}>
-          <td className="text-center">{i + 1}</td>
+          <td className="text-center"><div id="cart-index">{i + 1}</div></td>
           <td className="text-center">
             <div id="cart-product" className="row">
               <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0]} />
@@ -74,7 +102,7 @@ export default class CartTable extends Component {
     let items = this.generateItems();
     console.log('render items: ', items);
     return (
-      <table className="table table-striped table-hover ">
+      <table className="table table-hover ">
         <thead>
           <tr>
             <th className="text-center text-success">#</th>
