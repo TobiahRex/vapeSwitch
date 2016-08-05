@@ -5,7 +5,7 @@ import Breadcrumb_shipping from './breadcrumb_shipping'
 // May have to look in to sending data with <Link> look into Props accessible through react-router.
 
 function _getComponentState() {
-  return { address: CartStore.getAddress() };
+  return { Address: CartStore.getAddress() };
 }
 
 export default class ShippingMethod extends Component {
@@ -18,7 +18,6 @@ export default class ShippingMethod extends Component {
   }
 
   componentDidMount() {
-    CartActions.getAddress();
     CartStore.on('CHANGE', this._onChange);
   }
 
@@ -31,7 +30,6 @@ export default class ShippingMethod extends Component {
   }
 
   render() {
-    let { Address } = this.props
     return(
       <div className="main col-xs-6">
         <div id="checkout-main">
@@ -51,10 +49,10 @@ export default class ShippingMethod extends Component {
             <div className="customer-info-container">
               <h3 className="customer-info-title">Shipping Address</h3>
 
-              <h5>{Address.name}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
-              <h5>{Address.street}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
-              <h5>{Address.city}, {Address.state}, {Address.zip}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
-              <h5>{Address.country}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{this.state.Address.name}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{this.state.Address.street}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{this.state.Address.city}, {this.state.Address.state}, {this.state.Address.zip}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{this.state.Address.country}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
 
               <Link to="checkout">Edit shipping address</Link>
 

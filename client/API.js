@@ -89,14 +89,18 @@ const API = {
     let lsAddress = JSON.stringify(address);
     localStorage.address = lsAddress;
 
-    let newLsAddress = {}
-    try {
-      newLsAddress = JSON.parse(localStorage.address);
-    } catch(err) {
-      newLsAddress = { Error: 'Could not retrieve LS Address'};
-    }
+    lsAddress = this.getLSAddress();
     ServerActions.addedAddress(newLsAddress);
-  }
+  },
+  getLSAddress() {
+    let lsAddress = {}
+    try {
+      lsAddress = JSON.parse(localStorage.address);
+    } catch(err) {
+      lsAddress = { Error: 'Could not retrieve LS Address'};
+    }
+    return lsAddress;
+  },
 }
 
 export default API

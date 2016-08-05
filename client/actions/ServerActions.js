@@ -36,7 +36,7 @@ const ServerActions = {
       address,
       type: 'RECEIVED_NEW_ADDRESS',
     });
-  }
+  },  
 }
 
 export default ServerActions
