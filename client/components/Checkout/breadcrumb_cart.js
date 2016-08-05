@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-const breadcrumb = () => {
+const breadcrumb_cart = () => {
   return (
     <ul className="list-unstyled list-inline">
       <li className="breadcrumb__item breadcrumb__item--completed">
@@ -9,7 +9,7 @@ const breadcrumb = () => {
       </li>
       <li className='text-info breadcrumb-arrow'> > </li>
       <li className="breadcrumb__item breadcrumb__item--current">
-        Customer information >
+        Customer information 
       </li>
       <li className='text-info breadcrumb-arrow'> > </li>
       <li className="breadcrumb__item breadcrumb__item--blank">
@@ -23,4 +23,4 @@ const breadcrumb = () => {
   )
 }
 
-export default breadcrumb
+export default breadcrumb_cart

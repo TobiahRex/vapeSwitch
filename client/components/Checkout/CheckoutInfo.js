@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import CheckoutBreadcrumb from './breadcrumb'
+import Breadcrumb_cart from './breadcrumb_cart'
 import CountrySelector from './countrySelector'
 import StateSelector from './StateSelector'
 
@@ -10,7 +10,7 @@ export default class CheckoutInfo extends Component {
       <div className="main col-xs-6">
         <div id="checkout-main">
           <div id="checkout-main-header">
-            <CheckoutBreadcrumb />
+            <Breadcrumb_cart />
           </div>
           <div id="main-content">
             <div className="stripe-payment-container">
@@ -58,7 +58,11 @@ export default class CheckoutInfo extends Component {
                   </div>
                 </div>
 
-                <button className="to-shipping-method-button col-xs-12 btn btn-lg btn-warning">Continue to shipping method</button>
+                <Link to="shipping">
+                  <button className="to-shipping-method-button col-xs-12 btn btn-lg btn-warning">
+                    Continue to shipping method
+                  </button>
+                </Link>
 
               </div>
             </div>
