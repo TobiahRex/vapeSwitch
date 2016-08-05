@@ -15,11 +15,15 @@ export default class Mod extends Component {
     if (!mod) return (console.error('No mod information found'));
 
     if (type === 'Add To Cart') {
-      mod.uuid = uuid();
+      if (mod.cartQty) {
+        mod.cartQty += 1;
+      } else {
+        mod.cartQty = 1;
+      }
       CartActions.addLSCartItem(mod);
-      toastr.success(`${mod.title}as added to your cart`, 'Added To Cart');
+      return toastr.success(`${mod.title}as added to your cart`, 'Added To Cart');
     }
-    browserHistory.push(`mods/${mod._id}`);
+    return browserHistory.push(`mods/${mod._id}`);
 
   }
   generateButtonType(mod){
@@ -31,10 +35,9 @@ export default class Mod extends Component {
   }
   render(){
     let buttonText = this.generateButtonType(this.props.mod);
-    console.log('button: ', buttonText);
     let { images, description, title, model } = this.props.mod;
     return (
-      <div className="mod-card col-xs-12 thumnail row">
+      <div className="mod-card col-xs-12 row">
         <div className="mod-card-title col-xs-3">
           <h3>{title} <br /> {model}</h3>
           <img className=" col-xs-offset-1 thumbnail" id="mod-main-img" src={images[0]} role="presentation" />
@@ -45,7 +48,7 @@ export default class Mod extends Component {
           </p>
         </div>
         <div className="mod-card-button col-xs-3">
-          <button className="btn btn-primary" onClick={ () => this.productClicked(this.props.mod, buttonText)}>{buttonText}</button>
+          <button className="btn btn-primary btn-lg" onClick={ () => this.productClicked(this.props.mod, buttonText)}>{buttonText}</button>
         </div>
       </div>
     )

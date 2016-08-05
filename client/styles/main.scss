@@ -82,6 +82,31 @@ div.mod-card-button {
   padding-top: 120px;
 }
 
+div.main {
+  padding-right: 40px;
+  border-right: 1px solid black;
+}
+
+div#checkout-main-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid darkgray;
+}
+
+div.stripe-payment-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid darkgray;
+}
+
+img.stripe-payment-logo {
+  width: 70px;
+  padding-left: 5px;
+}
+
+div#checkout-sidebar {
+  padding-left: 30px;
+}
 
 div.order-summary-section-content {
   padding-bottom: 20px;
@@ -122,4 +147,8 @@ td.order-summary-name {
 }
 td.order-summary-price {
   padding-top: 20px;
+}
+
+.visually-hidden {
+  display: none;
 }

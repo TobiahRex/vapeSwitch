@@ -16,22 +16,30 @@ export default class CartTable extends Component {
   }
 
   decreaseQty(item) {
-    CartActions.removeLSCartItem(item);
+    item.cartQty -= 1;
+    if( item.cartQty <= 0){
+      CartActions.removeLSCartItem(item);
+    } else {
+      CartActions.updateLSCartItem(item);
+    }
   }
 
   increaseQty(item) {
+    if (item.cartQty) {
+      item.cartQty += 1;
+    } else {
+      item.cartQty = 1;
+    }
     CartActions.addLSCartItem(item);
   }
 
   generateItems() {
     if (!this.props.items) return (<tr className="lead">Your Cart is Empty</tr>);
     const items = this.props.items.map((stateItem, i) => {
-      console.log('stateItem: ', stateItem);
       const item = stateItem;
       stateItem.uuid = uuid()
       return (
-        <tr key={i}>
-          <td className="text-center"><div id="cart-index">{i + 1}</div></td>
+        <tr key={stateItem._id}>
           <td className="text-center">
             <div id="cart-product" className="row">
               <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0]} />
@@ -39,17 +47,17 @@ export default class CartTable extends Component {
             </div>
           </td>
           <td className="text-center">
+            <div id="cart-price">{`\u00a5 ${item.newPrice}`}</div>
+          </td>
+          <td className="text-center">
             <div id="quantity">
-              <span id="cart-quantity">{this.props.items.length}</span>
+              <span id="cart-quantity">{stateItem.cartQty}</span>
               <div className="btn-group">
                 <button onClick={this.decreaseQty.bind(null, item)} href="" className="btn btn-info">-</button>
 
                 <button onClick={this.increaseQty.bind(null, item)} href="" className="btn btn-info">+</button>
               </div>
             </div>
-          </td>
-          <td className="text-center">
-            <div id="cart-price">{`\u00a5 ${item.newPrice}`}</div>
           </td>
           <td className="text-center">
             <div id="cart-subtotal">{this.subTotal(item.quantity, item.newPrice)}</div>
@@ -67,15 +75,15 @@ export default class CartTable extends Component {
 
   render() {
     let { items } = this.props;
+    console.log('this.props.items: ', this.props.items);
     let itemCards = this.generateItems();
     return (
       <table className="table table-hover">
         <thead>
           <tr>
-            <th className="text-center text-success">#</th>
-            <th className="text-center text-success">Product</th>
-            <th className="text-center text-success">Quantity</th>
+            <th className="text-center text-success"></th>
             <th className="text-center text-success">Price</th>
+            <th className="text-center text-success">Quantity</th>
             <th className="text-center text-success">Sub Total</th>
           </tr>
         </thead>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import CartStore from '../../stores/CartStore.js'
-import CartActions from '../../actions/ProductActions.js'
+import CartActions from '../../actions/CartActions.js'
 import CartTable from './CartTable.js'
 
 function _getComponentState() {
@@ -18,8 +18,9 @@ export default class Cart extends Component {
   }
 
   componentDidMount() {
-    CartActions.getAllMods();
     CartStore.on('CHANGE', this._onChange);
+    CartActions.getLSCartItems();
+
   }
 
   componentWillUnmount() {
@@ -27,7 +28,6 @@ export default class Cart extends Component {
   }
 
   _onChange() {
-    console.log('are you firing?');
     this.setState(_getComponentState());
   }
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class CheckoutSummary extends Component {
   render() {
     return (
-      <div className="sidebar col-xs-5">
+      <div id="checkout-sidebar" className="sidebar col-xs-6">
         <div className="sidebar_header"></div>
         <div className="sidebar_content">
           <div className="order-summary">
@@ -12,7 +12,7 @@ export default class CheckoutSummary extends Component {
               <div className="order-summary-products">
                 <div className="order-summary-section-content">
                   <table>
-                    <caption>Checkout Cart</caption>
+                    <caption className="visually-hidden">Checkout Cart</caption>
                     <thead>
                       <tr className="visually-hidden">
                         <th className="text-center visually-hidden col-xs-2">Image</th>

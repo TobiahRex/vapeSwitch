@@ -7,7 +7,7 @@ class CartStore extends EventEmitter {
 
   constructor(props) {
     super(props);
-    this.removeOneLSCart = this._updateLSCart.bind(this);
+    this._updateLSCart = this._updateLSCart.bind(this);
 
     AppDispatcher.register(action => {
       switch (action.type) {
@@ -23,12 +23,13 @@ class CartStore extends EventEmitter {
   }
 
   _updateLSCart(items) {
+
     if (!items) console.error('Did not provide required item for UPDATE.');
     _cart = items;
+
   }
 
   getCart() {
-    console.log('_cart: ', _cart);
     return _cart;
   }
 

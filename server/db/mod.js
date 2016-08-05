@@ -18,6 +18,7 @@ const modSchema = new mongoose.Schema({
   note: { type: String },
   category: { type: String },
   quantity: { type: Number },
+  cartQty: { type: Number },
   options: {
     popularity: { type: Number },
     rating: { type: Number },

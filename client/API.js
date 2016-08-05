@@ -11,11 +11,23 @@ const API = {
   },
   addLSCartItem(item) {
     let ls = this.getLocalStorage();
-    ls.push(item);
-    this.writeToLocalStorage(ls);
+
+    if (!ls.length) {
+      ls.push(item);
+      return this.writeToLocalStorage(ls);
+    } else {
+      ls = ls.map(lsItem => {
+        if (lsItem._id === item._id){
+          lsItem = item;
+          return lsItem;
+        } else {
+          return item;
+        }
+      });
+      return this.writeToLocalStorage(ls);
+    }
   },
   removeLSCartItem(item) {
-    console.log('item: ', item);
     let ls = this.getLocalStorage();
     ls.forEach((lsItem, i) => {
       if (lsItem.uuid === item.uuid) ls.splice(i, 1);
@@ -27,10 +39,8 @@ const API = {
   },
   updateLSCartItem(item) {
     let ls = this.getLocalStorage();
-    ls = ls.map(lsItem => lsItem === item ? item : lsItem);
-    this.writeToLocalStorage(ls, (newLs) => {
-      ServerActions.updateLSCart(newLs);
-    });
+    ls = ls.map(lsItem => lsItem._id === item._id ? item : lsItem);
+    this.writeToLocalStorage(ls);
   },
 
   // Backend API
@@ -73,6 +83,7 @@ const API = {
     let ls = data;
     localStorage.cart = JSON.stringify(ls);
     let newLs = this.getLocalStorage();
+    console.log('newLs', newLs);
     ServerActions.updateLSCart(newLs);
   }
 }
