@@ -15,7 +15,7 @@ import CheckoutInfo from './CheckoutInfo'
 export default class Checkout extends Component {
   render() {
     return (
-      <div className="wrapper row">
+      <div className="checkout-wrapper row">
         <CheckoutInfo />
         <CheckoutSummary />
       </div>

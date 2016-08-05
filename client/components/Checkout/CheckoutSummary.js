@@ -34,10 +34,10 @@ export default class CheckoutSummary extends Component {
               </div>
               <div className="order-summary-discount">
                 <form className="order-summary-discount-form form-group" action="">
-                  <div className="order-summary-discount-input col-xs-9">
+                  <div className="order-summary-discount-input col-xs-8">
                     <input className="form-control" type="text" placeholder="Discount" id="checkout-reduction code"/>
                   </div>
-                  <div className="order-summary-discount-apply-button col-xs-3">
+                  <div className="order-summary-discount-apply-button col-xs-4">
                     <button className="form-control order-summary-discount-apply btn btn-default">Apply</button>
                   </div>
                 </form>
@@ -52,25 +52,25 @@ export default class CheckoutSummary extends Component {
                     </tr>
                   </thead>
                   <tbody className="order-summary-tbody">
-                    <tr className="order-summary--subtotal">
-                      <td className="order-summary__name">Subtotal</td>
-                      <td className="order-summary__price">
-                        <span className="order-summary__emphasis" data-checkout-subtotal-price-target="8380">$83.80</span>
+                    <tr className="order-summary-subtotal">
+                      <td className="order-summary-name">Subtotal</td>
+                      <td className="order-summary-price">
+                        <span className="order-summary-emphasis" data-checkout-subtotal-price-target="8380">$83.80</span>
                       </td>
                     </tr>
 
 
                     <tr className="order-summary--shipping">
-                      <td className="order-summary__name">Shipping</td>
+                      <td className="order-summary-name">Shipping</td>
                       <td className="order-summary__price">
-                        <span className="order-summary__emphasis" data-checkout-total-shipping-target="0">—</span>
+                        <span className="order-summary-emphasis" data-checkout-total-shipping-target="0">—</span>
                       </td>
                     </tr>
 
                     <tr className="order-summary--taxes " data-checkout-taxes="">
                       <td className="order-summary-name">Taxes</td>
                       <td className="order-summary-price">
-                        <span className="order-summary__emphasis" data-checkout-total-taxes-target="755">$7.55</span>
+                        <span className="order-summary-emphasis" data-checkout-total-taxes-target="755">$7.55</span>
                       </td>
                     </tr>
 

@@ -48,6 +48,18 @@ export default class CheckoutInfo extends Component {
                 <input type="text" className="customer-info custom-info-zip form-control" placeholder="Zip code" required/>
 
                 <input type="text" className="customer-info customer-info-phone form-control" placeholder="Phone (optional)"/>
+
+                <div className="checkbox-wrapper">
+                  <div className="checkbox-input">
+                    <input id="saveinfo-checkbox" type="checkbox" className="saveinfo-checkbox"/>
+                    <label htmlFor="saveinfo-checkbox" className="checkbox-label">
+                      Save this information for next time.
+                    </label>
+                  </div>
+                </div>
+
+                <button className="to-shipping-method-button col-xs-12 btn btn-lg btn-warning">Continue to shipping method</button>
+
               </div>
             </div>
           </div>
