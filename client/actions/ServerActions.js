@@ -31,6 +31,12 @@ const ServerActions = {
       type: 'RECEIVE_ALL_MODS',
     });
   },
+  addedAddress(address) {
+    AppDispatcher.dispatch({
+      address,
+      type: 'RECEIVED_NEW_ADDRESS',
+    });
+  }
 }
 
 export default ServerActions

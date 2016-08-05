@@ -1,7 +1,9 @@
 import { EventEmitter } from 'events'
 import AppDispatcher from '../AppDispatcher'
+import toastr from 'toastr'
 
 let _cart = [];
+let _address = {};
 
 class CartStore extends EventEmitter {
 
@@ -17,16 +19,24 @@ class CartStore extends EventEmitter {
           this.emit('CHANGE');
           break;
 
+        case 'RECEIVED_NEW_ADDRESS',
+          this._addNewAddress(action.address);
+          this.emit('CHANGE');
+          break;
+
         default :
       }
     });
   }
 
   _updateLSCart(items) {
-
     if (!items) console.error('Did not provide required item for UPDATE.');
     _cart = items;
+  }
 
+  _addNewAddress(address) {
+    if(address.Error) toastr.error(address.Error, 'ERROR');
+    _address = address;
   }
 
   getCart() {
