@@ -29,13 +29,10 @@ const API = {
   },
   removeLSCartItem(item) {
     let ls = this.getLocalStorage();
-    ls.forEach((lsItem, i) => {
-      if (lsItem.uuid === item.uuid) ls.splice(i, 1);
-    });
-
+    console.log('ls before removal: ', );
+    ls = ls.map((lsItem, i) => lsItem._id === item._id ? ls.splice(i, 1) : lsItem );
+    console.log('ls after removal: ', );
     this.writeToLocalStorage(ls);
-    let newLs = this.getLocalStorage();
-    ServerActions.updateLSCart(newLs);
   },
   updateLSCartItem(item) {
     let ls = this.getLocalStorage();

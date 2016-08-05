@@ -18,6 +18,7 @@ export default class CartTable extends Component {
   decreaseQty(item) {
     item.cartQty -= 1;
     if( item.cartQty <= 0){
+      toastr.warning(`${item.title} ${item.model} was removed from your cart.`, 'REMOVED');
       CartActions.removeLSCartItem(item);
     } else {
       CartActions.updateLSCartItem(item);
