@@ -39,6 +39,22 @@ const API = {
     ls = ls.map(lsItem => lsItem._id === item._id ? item : lsItem);
     this.writeToLocalStorage(ls);
   },
+  getLocalStorage(){
+    let ls = [];
+    try {
+      ls = JSON.parse(localStorage.cart);
+    } catch(err) {
+      localStorage.cart = JSON.stringify([]);
+    }
+    return ls;
+  },
+  writeToLocalStorage(data){
+    let ls = data;
+    localStorage.cart = JSON.stringify(ls);
+    let newLs = this.getLocalStorage();
+    console.log('newLs', newLs);
+    ServerActions.updateLSCart(newLs);
+  },
 
   // Backend API
   getAllMods() {
@@ -67,21 +83,19 @@ const API = {
     .done(res => ServerActions.updatedMod(res))
     .fail(err => console.error(err));
   },
-  getLocalStorage(){
-    let ls = [];
+
+  // Checkout API
+  addNewAddress(address) {
+    let lsAddress = JSON.stringify(address);
+    localStorage.address = lsAddress;
+
+    let newLsAddress = {}
     try {
-      ls = JSON.parse(localStorage.cart);
+      newLsAddress = JSON.parse(localStorage.address);
     } catch(err) {
-      localStorage.cart = JSON.stringify([]);
+      newLsAddress = { Error: 'Could not retrieve LS Address'};
     }
-    return ls;
-  },
-  writeToLocalStorage(data){
-    let ls = data;
-    localStorage.cart = JSON.stringify(ls);
-    let newLs = this.getLocalStorage();
-    console.log('newLs', newLs);
-    ServerActions.updateLSCart(newLs);
+    ServerActions.addedAddress(newLsAddress);
   }
 }
 

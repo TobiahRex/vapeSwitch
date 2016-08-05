@@ -9,7 +9,6 @@ function _getComponentState() {
 }
 
 export default class Mods extends Component {
-
   constructor(props) {
     super(props);
 

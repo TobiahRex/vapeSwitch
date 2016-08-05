@@ -4,6 +4,9 @@ import CartActions from '../../actions/CartActions'
 import toastr from 'toastr'
 const uuid = require('uuid');
 
+// TODO fix "Your Cart Is Empty"
+// The html is messed up.  It's not allowing transition to Checkout form cart.
+
 export default class CartTable extends Component {
 
   constructor(props) {

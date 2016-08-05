@@ -13,6 +13,9 @@ const CartActions = {
   updateLSCartItem(item) {
     API.updateLSCartItem(item);
   },
+  addNewAddress(address) {
+    API.addNewAddress(address);
+  },
 }
 
 export default CartActions

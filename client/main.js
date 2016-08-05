@@ -10,6 +10,7 @@ import Mods from './components/Mods/Mods.js'
 import Cart from './components/Cart/Cart.js'
 import Checkout from './components/Checkout/Checkout.js'
 import modDetails from './components/Mods/modDetails.js'
+import ShippingMethod from './components/Checkout/ShippingMethod.js'
 
 render(
     <Router history={browserHistory}>
@@ -20,6 +21,7 @@ render(
         <Route path="mods" component={Mods} />
         <Route path="cart" component={Cart} />
         <Route path="checkout" component={Checkout} />
+        <Route path="shipping" component={ShippingMethod} />
         <Route path="mods/:id" component={modDetails} />
       </Route>
     </Router>,

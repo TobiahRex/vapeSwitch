@@ -85,9 +85,13 @@ div.mod-card-button {
   padding-top: 120px;
 }
 
+div.checkout-wrapper {
+  margin-bottom: 150px;
+}
+
 div.main {
   padding-right: 40px;
-  border-right: 1px solid black;
+  border-right: 1px solid #333232;
 }
 
 div#checkout-main-header {
@@ -139,9 +143,11 @@ tbody.order-summary-tbody {
 }
 
 td.order-summary-name {
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 td.order-summary-price {
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -168,7 +174,7 @@ h1#cart-empty {
 
 div.alternative-payment-method::before, div.alternative-payment-method::after {
   content: '';
-  width: 200px;
+  width: 45%;
   display: inline-block;
   height: 1px;
   background: darkgray;
@@ -181,12 +187,57 @@ div.alternative-payment-method::before, div.alternative-payment-method::after {
 input.customer-info {
   margin-bottom: 10px;
 }
+
+div.customer-info {
+  margin-bottom: 10px;
+}
+
+div.customer-info-country-container {
+  background-color: white;
+  height: 54px;
+  padding-top: 0px;
+}
+#select-country {
+  height: 20px;
+}
+#select-country-label {
+  margin-bottom: 0px;
+}
+
+div.customer-info-state-container {
+  background-color: white;
+  height: 54px;
+  padding-top: 0px;
+}
+#select-state {
+  height: 20px;
+}
+#select-state-label {
+  margin-bottom: 0px;
+}
+
 input.customer-info:focus {
   border: 2px solid rgba(68, 235, 41, 0.88);
 }
 
-btn-warning:hover {
+.stripe-payment-button.btn-warning:hover {
   color: #ffffff;
   background-color: #0ac83c;
   border-color: #0abe18;
+}
+.to-shipping-method-button.btn-warning:hover {
+  color: #ffffff;
+  background-color: #0ac83c;
+  border-color: #0abe18;
+}
+
+div.checkbox-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#saveinfo-checkbox {
+  margin-right: 20px;
+  width: 16px;
+  height: 16px;
 }
