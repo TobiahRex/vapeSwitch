@@ -25,6 +25,16 @@ export default class CheckoutInfo extends Component {
   }
 }
 
+submitCountry(country) {
+  if (!country) toastr.error('Could not choose a country.', 'ERROR');
+  this.setState({ country });
+}
+
+submitState(state) {
+  if (!state) toastr.error('Could not choose a state.', 'ERROR');
+  this.setState({ state });
+}
+
 saveAddress(event) {
   event.preventDefault();
 
