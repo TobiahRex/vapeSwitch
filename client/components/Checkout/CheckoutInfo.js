@@ -4,8 +4,13 @@ import Breadcrumb_cart from './breadcrumb_cart'
 import CountrySelector from './countrySelector'
 import StateSelector from './StateSelector'
 
+// TODO build props for shipping address information.
+// TODO find a way to make shipping props available to Shipping Method Component.
+
 export default class CheckoutInfo extends Component {
   render() {
+    let { checkoutInfo } = this.props
+
     return(
       <div className="main col-xs-6">
         <div id="checkout-main">
