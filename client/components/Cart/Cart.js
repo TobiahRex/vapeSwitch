@@ -36,7 +36,6 @@ export default class Cart extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Cart</h1>
         <div>
         </div>
         <CartTable items={this.state.items}/>

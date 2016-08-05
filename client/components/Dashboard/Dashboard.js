@@ -10,7 +10,7 @@ export default class Dashboard extends Component {
         <h3><i>Make the Switch</i></h3>
         <div className="col-xs-4 col-xs-offset-4">
 
-          <ul className="nav nav-pills">
+          <ul className="nav nav-pills" id="dashboard-navpills">
             <li><Link to="about">About</Link></li>
             <li><Link to="mods">Mods</Link></li>
             <li><Link to="contact">Contact</Link></li>

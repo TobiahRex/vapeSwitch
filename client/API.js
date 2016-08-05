@@ -29,9 +29,9 @@ const API = {
   },
   removeLSCartItem(item) {
     let ls = this.getLocalStorage();
-    console.log('ls before removal: ', );
+    console.log('ls before removal: ', ls);
     ls = ls.map((lsItem, i) => lsItem._id === item._id ? ls.splice(i, 1) : lsItem );
-    console.log('ls after removal: ', );
+    console.log('ls after removal: ', ls);
     this.writeToLocalStorage(ls);
   },
   updateLSCartItem(item) {

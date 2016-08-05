@@ -35,7 +35,8 @@ export default class CartTable extends Component {
   }
 
   generateItems() {
-    if (!this.props.items) return (<tr className="lead">Your Cart is Empty</tr>);
+    console.log('this.props.items: ', this.props.items);
+    if (!this.props.items.length) return;
     const items = this.props.items.map((stateItem, i) => {
       const item = stateItem;
       stateItem.uuid = uuid()
@@ -43,7 +44,7 @@ export default class CartTable extends Component {
         <tr key={stateItem._id}>
           <td className="text-center">
             <div id="cart-product" className="row">
-              <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0]} />
+              <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0] || ''} />
               <span id="cart-product-desc" className="col-xs-8">{item.title} {item.model}</span>
             </div>
           </td>
@@ -76,20 +77,23 @@ export default class CartTable extends Component {
 
   render() {
     let { items } = this.props;
-    console.log('this.props.items: ', this.props.items);
     let itemCards = this.generateItems();
+
+    console.log("itemCards: ", itemCards);
     return (
       <table className="table table-hover">
         <thead>
-          <tr>
-            <th className="text-center text-success"></th>
-            <th className="text-center text-success">Price</th>
-            <th className="text-center text-success">Quantity</th>
-            <th className="text-center text-success">Sub Total</th>
-          </tr>
+          { !itemCards ? '' :
+            <tr>
+              <th className="text-center text-success"></th>
+              <th className="text-center text-success">Price</th>
+              <th className="text-center text-success">Quantity</th>
+              <th className="text-center text-success">Sub Total</th>
+            </tr>
+          }
         </thead>
         <tbody>
-          {itemCards}
+          {itemCards || <h1>Your Cart Is Empty</h1>}
         </tbody>
       </table>
     )

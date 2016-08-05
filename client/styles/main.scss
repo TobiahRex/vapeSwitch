@@ -14,8 +14,11 @@ nav.navbar {
 #navbar-cart {
   width: 35px;
 }
+#dashboard-navpills {
+  width: 300px;
+}
 #footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   margin-top: 50px;
@@ -96,7 +99,7 @@ div#checkout-main-header {
 div.stripe-payment-container {
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid darkgray;
+  // border-bottom: 1px solid darkgray;
 }
 
 img.stripe-payment-logo {
@@ -151,4 +154,22 @@ td.order-summary-price {
 
 .visually-hidden {
   display: none;
+}
+
+#cart-is-empty {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1#cart-empty {
+  line-height: 10em;
+}
+
+div.alternative-payment-method::before, div.alternative-payment-method::after {
+  content: '';
+  width: 200px;
+  display: inline-block;
+  height: 1px;
+  background: darkgray;
 }

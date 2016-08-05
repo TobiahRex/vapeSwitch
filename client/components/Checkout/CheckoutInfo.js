@@ -16,6 +16,13 @@ export default class CheckoutInfo extends Component {
                 <img src="client/styles/images/stripe_icon.png" alt="stripe" className="stripe-payment-logo"/>
               </button>
             </div>
+            <div className="alternative-payment-method">
+              <span className="alternative-payment-seperator"> OR </span>
+            </div>
+            <div className="customer-info-container">
+              <h3 className="customer-info-title">Customer Information</h3>
+              <input type="text" className="customer-info-email form-control"/>
+            </div>
           </div>
           <div id="main-footer">
           </div>
