@@ -19,7 +19,7 @@ class CartStore extends EventEmitter {
           this.emit('CHANGE');
           break;
 
-        case 'RECEIVED_NEW_ADDRESS',
+        case 'RECEIVED_NEW_ADDRESS':
           this._addNewAddress(action.address);
           this.emit('CHANGE');
           break;

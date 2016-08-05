@@ -26,7 +26,7 @@ export default class ShippingMethod extends Component {
   }
 
   _onChange() {
-    this.setState({_getComponentState()});
+    this.setState(_getComponentState());
   }
 
   render() {

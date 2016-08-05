@@ -9,41 +9,50 @@ export default class CheckoutInfo extends Component {
     super(props);
 
     this.state = {
-      Address: {
-        firstName: '',
-        lastName: '',
-        company: '',
-        street: '',
-        city: '',
-        state: '',
-        country: '',
-        zip: '',
-        phone: '',
-      }
+      firstName: '',
+      lastName: '',
+      company: '',
+      street: '',
+      city: '',
+      state: '',
+      country: '',
+      zip: '',
+      phone: '',
     }
     this.saveAddress = this.saveAddress.bind(this);
+    this.submitCountry = this.submitCountry.bind(this);
+    this.submitState = this.submitState.bind(this);
   }
+}
 
-  saveAddress(event) {
-    event.preventDefault();
-    CartActions.addNewAddress(this.state.Address);
-    this.setState({
-      Address: {
-        firstName: '',
-        lastName: '',
-        company: '',
-        street: '',
-        city: '',
-        state: '',
-        country: '',
-        zip: '',
-        phone: '',
-      }
-    });
-  }
+saveAddress(event) {
+  event.preventDefault();
+
+  let Address = { Address: this.state }
+
+  CartActions.addNewAddress(Address);
+  this.setState({
+    firstName: '',
+    lastName: '',
+    company: '',
+    street: '',
+    city: '',
+    state: '',
+    country: '',
+    zip: '',
+    phone: '',
+  });
 
   render() {
     let { checkoutInfo } = this.props
+    let countryProps = {
+      submitCountry: this.submitCountry,
+      country: this.state.country,
+    };
+    let stateProps = {
+      submitState: this.submitState,
+      state: this.state.state,
+    };
     let Address = {};
     return(
       <div className="main col-xs-6">
@@ -69,25 +78,25 @@ export default class CheckoutInfo extends Component {
               <h3 className="customer-info-title">Shipping Address</h3>
               <form>
                 <div className="form-group">
-                  <input type="text" className="customer-info custom-info-firstname form-control" placeholder="First name" value={this.state.Address.firstName}  onChange={ e => this.setState({ Address.firstName: e.target.value })}required/>
+                  <input type="text" className="customer-info custom-info-firstname form-control" placeholder="First name" value={this.state.firstName}  onChange={ e => this.setState({ firstName: e.target.value })}required/>
 
-                  <input type="text" className="customer-info custom-info-lastname form-control" placeholder="Last name" value={this.state.Address.lastName}  onChange={ e => this.setState({ Address.lastName: e.target.value })}required/>
+                  <input type="text" className="customer-info custom-info-lastname form-control" placeholder="Last name" value={this.state.lastName}  onChange={ e => this.setState({ lastName: e.target.value })}required/>
 
-                  <input type="text" className="customer-info custom-info-company form-control" placeholder="Company (optional)" value={this.state.Address.company}  onChange={ e => this.setState({ Address.company: e.target.value })}/>
+                  <input type="text" className="customer-info custom-info-company form-control" placeholder="Company (optional)" value={this.state.company}  onChange={ e => this.setState({ company: e.target.value })}/>
 
-                  <input type="text" className="customer-info custom-info-address form-control" placeholder="Address" value={this.state.Address.street}  onChange={ e => this.setState({ Address.street: e.target.value })}required/>
+                  <input type="text" className="customer-info custom-info-address form-control" placeholder="Address" value={this.state.street}  onChange={ e => this.setState({ street: e.target.value })}required/>
 
-                  <input type="text" className="customer-info custom-info-apt form-control" placeholder="Apt, suite, etc. (optional)" value={this.state.Address.apt}  onChange={ e => this.setState({ Address.apt: e.target.value })}/>
+                  <input type="text" className="customer-info custom-info-apt form-control" placeholder="Apt, suite, etc. (optional)" value={this.state.apt}  onChange={ e => this.setState({ apt: e.target.value })}/>
 
-                  <input type="text" className="customer-info custom-info-city form-control" placeholder="City" value={this.state.Address.city}  onChange={ e => this.setState({ Address.city: e.target.value })}required/>
+                  <input type="text" className="customer-info custom-info-city form-control" placeholder="City" value={this.state.city}  onChange={ e => this.setState({ city: e.target.value })}required/>
 
-                  <CountrySelector country={this.state.Addresss.country}/>
+                  <CountrySelector countryProps={countryProps} />
 
-                  <StateSelector state={this.state.Address.state}/>
+                  <StateSelector stateProps={stateProps} />
 
-                  <input type="text" className="customer-info custom-info-zip form-control" placeholder="Zip code" value={this.state.Address.zip}  onChange={ e => this.setState({ Address.zip: e.target.value })}required/>
+                  <input type="text" className="customer-info custom-info-zip form-control" placeholder="Zip code" value={this.state.zip}  onChange={ e => this.setState({ zip: e.target.value })}required/>
 
-                  <input type="text" className="customer-info customer-info-phone form-control" placeholder="Phone (optional)" value={this.state.Address.phone} onChange={ e => this.setState({ Address.phone: e.target.value })}/>
+                  <input type="text" className="customer-info customer-info-phone form-control" placeholder="Phone (optional)" value={this.state.phone} onChange={ e => this.setState({ phone: e.target.value })}/>
 
                   <div className="checkbox-wrapper">
                     <div className="checkbox-input">
