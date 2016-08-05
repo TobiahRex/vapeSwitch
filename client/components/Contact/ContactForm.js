@@ -17,10 +17,11 @@ export default class ContactForm extends Component {
   }
 
   sendEmail(event) {
-    console.log('event: ', this.state);
     event.preventDefault();
-    if (!this.state.name || !this.state.email || !this.state.body) return;
-    // ContactActions.sendEmail(this.state);
+    if (!this.state.name || !this.state.email || !this.state.body){
+      return toastr.error('Please provide ALL your contact information.', 'MISSING REQUIRED FIELDS');
+    }
+    toastr.success('Youre message was sent to VapeSwitch. Thanks!', 'SENT');
     this.setState({ name: '', email: '', body: '', copy: true });
   }
 
