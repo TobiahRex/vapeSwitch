@@ -1,486 +1,246 @@
-export const Afghanistan = 'Afghanistan'
-export const AF = 'AF'
-export const Åland Islands = 'Åland Islands'
-export const AX = 'AX'
-export const Albania = 'Albania'
-export const AL = 'AL'
-export const Algeria = 'Algeria'
-export const DZ = 'DZ'
-export const American Samoa = 'American Samoa'
-export const AS = 'AS'
-export const AndorrA = 'AndorrA'
-export const AD = 'AD'
-export const Angola = 'Angola'
-export const AO = 'AO'
-export const Anguilla = 'Anguilla'
-export const AI = 'AI'
-export const Antarctica = 'Antarctica'
-export const AQ = 'AQ'
-export const Antigua and Barbuda = 'Antigua and Barbuda'
-export const AG = 'AG'
-export const Argentina = 'Argentina'
-export const AR = 'AR'
-export const Armenia = 'Armenia'
-export const AM = 'AM'
-export const Aruba = 'Aruba'
-export const AW = 'AW'
-export const Australia = 'Australia'
-export const AU = 'AU'
-export const Austria = 'Austria'
-export const AT = 'AT'
-export const Azerbaijan = 'Azerbaijan'
-export const AZ = 'AZ'
-export const Bahamas = 'Bahamas'
-export const BS = 'BS'
-export const Bahrain = 'Bahrain'
-export const BH = 'BH'
-export const Bangladesh = 'Bangladesh'
-export const BD = 'BD'
-export const Barbados = 'Barbados'
-export const BB = 'BB'
-export const Belarus = 'Belarus'
-export const BY = 'BY'
-export const Belgium = 'Belgium'
-export const BE = 'BE'
-export const Belize = 'Belize'
-export const BZ = 'BZ'
-export const Benin = 'Benin'
-export const BJ = 'BJ'
-export const Bermuda = 'Bermuda'
-export const BM = 'BM'
-export const Bhutan = 'Bhutan'
-export const BT = 'BT'
-export const Bolivia = 'Bolivia'
-export const BO = 'BO'
-export const Bosnia and Herzegovina = 'Bosnia and Herzegovina'
-export const BA = 'BA'
-export const Botswana = 'Botswana'
-export const BW = 'BW'
-export const Bouvet Island = 'Bouvet Island'
-export const BV = 'BV'
-export const Brazil = 'Brazil'
-export const BR = 'BR'
-export const British Indian Ocean Territory = 'British Indian Ocean Territory'
-export const IO = 'IO'
-export const Brunei Darussalam = 'Brunei Darussalam'
-export const BN = 'BN'
-export const Bulgaria = 'Bulgaria'
-export const BG = 'BG'
-export const Burkina Faso = 'Burkina Faso'
-export const BF = 'BF'
-export const Burundi = 'Burundi'
-export const BI = 'BI'
-export const Cambodia = 'Cambodia'
-export const KH = 'KH'
-export const Cameroon = 'Cameroon'
-export const CM = 'CM'
-export const Canada = 'Canada'
-export const CA = 'CA'
-export const Cape Verde = 'Cape Verde'
-export const CV = 'CV'
-export const Cayman Islands = 'Cayman Islands'
-export const KY = 'KY'
-export const Central African Republic = 'Central African Republic'
-export const CF = 'CF'
-export const Chad = 'Chad'
-export const TD = 'TD'
-export const Chile = 'Chile'
-export const CL = 'CL'
-export const China = 'China'
-export const CN = 'CN'
-export const Christmas Island = 'Christmas Island'
-export const CX = 'CX'
-export const Cocos (Keeling) Islands = 'Cocos (Keeling) Islands'
-export const CC = 'CC'
-export const Colombia = 'Colombia'
-export const CO = 'CO'
-export const Comoros = 'Comoros'
-export const KM = 'KM'
-export const Congo = 'Congo'
-export const CG = 'CG'
-export const Congo, The Democratic Republic of the = 'Congo, The Democratic Republic of the'
-export const CD = 'CD'
-export const Cook Islands = 'Cook Islands'
-export const CK = 'CK'
-export const Costa Rica = 'Costa Rica'
-export const CR = 'CR'
-export const Cote D\'Ivoire = 'Cote D\'Ivoire'
-export const CI = 'CI'
-export const Croatia = 'Croatia'
-export const HR = 'HR'
-export const Cuba = 'Cuba'
-export const CU = 'CU'
-export const Cyprus = 'Cyprus'
-export const CY = 'CY'
-export const Czech Republic = 'Czech Republic'
-export const CZ = 'CZ'
-export const Denmark = 'Denmark'
-export const DK = 'DK'
-export const Djibouti = 'Djibouti'
-export const DJ = 'DJ'
-export const Dominica = 'Dominica'
-export const DM = 'DM'
-export const Dominican Republic = 'Dominican Republic'
-export const DO = 'DO'
-export const Ecuador = 'Ecuador'
-export const EC = 'EC'
-export const Egypt = 'Egypt'
-export const EG = 'EG'
-export const El Salvador = 'El Salvador'
-export const SV = 'SV'
-export const Equatorial Guinea = 'Equatorial Guinea'
-export const GQ = 'GQ'
-export const Eritrea = 'Eritrea'
-export const ER = 'ER'
-export const Estonia = 'Estonia'
-export const EE = 'EE'
-export const Ethiopia = 'Ethiopia'
-export const ET = 'ET'
-export const Falkland Islands (Malvinas) = 'Falkland Islands (Malvinas)'
-export const FK = 'FK'
-export const Faroe Islands = 'Faroe Islands'
-export const FO = 'FO'
-export const Fiji = 'Fiji'
-export const FJ = 'FJ'
-export const Finland = 'Finland'
-export const FI = 'FI'
-export const France = 'France'
-export const FR = 'FR'
-export const French Guiana = 'French Guiana'
-export const GF = 'GF'
-export const French Polynesia = 'French Polynesia'
-export const PF = 'PF'
-export const French Southern Territories = 'French Southern Territories'
-export const TF = 'TF'
-export const Gabon = 'Gabon'
-export const GA = 'GA'
-export const Gambia = 'Gambia'
-export const GM = 'GM'
-export const Georgia = 'Georgia'
-export const GE = 'GE'
-export const Germany = 'Germany'
-export const DE = 'DE'
-export const Ghana = 'Ghana'
-export const GH = 'GH'
-export const Gibraltar = 'Gibraltar'
-export const GI = 'GI'
-export const Greece = 'Greece'
-export const GR = 'GR'
-export const Greenland = 'Greenland'
-export const GL = 'GL'
-export const Grenada = 'Grenada'
-export const GD = 'GD'
-export const Guadeloupe = 'Guadeloupe'
-export const GP = 'GP'
-export const Guam = 'Guam'
-export const GU = 'GU'
-export const Guatemala = 'Guatemala'
-export const GT = 'GT'
-export const Guernsey = 'Guernsey'
-export const GG = 'GG'
-export const Guinea = 'Guinea'
-export const GN = 'GN'
-export const Guinea-Bissau = 'Guinea-Bissau'
-export const GW = 'GW'
-export const Guyana = 'Guyana'
-export const GY = 'GY'
-export const Haiti = 'Haiti'
-export const HT = 'HT'
-export const Heard Island and Mcdonald Islands = 'Heard Island and Mcdonald Islands'
-export const HM = 'HM'
-export const Holy See (Vatican City State) = 'Holy See (Vatican City State)'
-export const VA = 'VA'
-export const Honduras = 'Honduras'
-export const HN = 'HN'
-export const Hong Kong = 'Hong Kong'
-export const HK = 'HK'
-export const Hungary = 'Hungary'
-export const HU = 'HU'
-export const Iceland = 'Iceland'
-export const IS = 'IS'
-export const India = 'India'
-export const IN = 'IN'
-export const Indonesia = 'Indonesia'
-export const ID = 'ID'
-export const Iran, Islamic Republic Of = 'Iran, Islamic Republic Of'
-export const IR = 'IR'
-export const Iraq = 'Iraq'
-export const IQ = 'IQ'
-export const Ireland = 'Ireland'
-export const IE = 'IE'
-export const Isle of Man = 'Isle of Man'
-export const IM = 'IM'
-export const Israel = 'Israel'
-export const IL = 'IL'
-export const Italy = 'Italy'
-export const IT = 'IT'
-export const Jamaica = 'Jamaica'
-export const JM = 'JM'
-export const Japan = 'Japan'
-export const JP = 'JP'
-export const Jersey = 'Jersey'
-export const JE = 'JE'
-export const Jordan = 'Jordan'
-export const JO = 'JO'
-export const Kazakhstan = 'Kazakhstan'
-export const KZ = 'KZ'
-export const Kenya = 'Kenya'
-export const KE = 'KE'
-export const Kiribati = 'Kiribati'
-export const KI = 'KI'
-export const Korea, Democratic People\'S Republic of = 'Korea, Democratic People\'S Republic of'
-export const KP = 'KP'
-export const Korea, Republic of = 'Korea, Republic of'
-export const KR = 'KR'
-export const Kuwait = 'Kuwait'
-export const KW = 'KW'
-export const Kyrgyzstan = 'Kyrgyzstan'
-export const KG = 'KG'
-export const Lao People\'S Democratic Republic = 'Lao People\'S Democratic Republic'
-export const LA = 'LA'
-export const Latvia = 'Latvia'
-export const LV = 'LV'
-export const Lebanon = 'Lebanon'
-export const LB = 'LB'
-export const Lesotho = 'Lesotho'
-export const LS = 'LS'
-export const Liberia = 'Liberia'
-export const LR = 'LR'
-export const Libyan Arab Jamahiriya = 'Libyan Arab Jamahiriya'
-export const LY = 'LY'
-export const Liechtenstein = 'Liechtenstein'
-export const LI = 'LI'
-export const Lithuania = 'Lithuania'
-export const LT = 'LT'
-export const Luxembourg = 'Luxembourg'
-export const LU = 'LU'
-export const Macao = 'Macao'
-export const MO = 'MO'
-export const Macedonia, The Former Yugoslav Republic of = 'Macedonia, The Former Yugoslav Republic of'
-export const MK = 'MK'
-export const Madagascar = 'Madagascar'
-export const MG = 'MG'
-export const Malawi = 'Malawi'
-export const MW = 'MW'
-export const Malaysia = 'Malaysia'
-export const MY = 'MY'
-export const Maldives = 'Maldives'
-export const MV = 'MV'
-export const Mali = 'Mali'
-export const ML = 'ML'
-export const Malta = 'Malta'
-export const MT = 'MT'
-export const Marshall Islands = 'Marshall Islands'
-export const MH = 'MH'
-export const Martinique = 'Martinique'
-export const MQ = 'MQ'
-export const Mauritania = 'Mauritania'
-export const MR = 'MR'
-export const Mauritius = 'Mauritius'
-export const MU = 'MU'
-export const Mayotte = 'Mayotte'
-export const YT = 'YT'
-export const Mexico = 'Mexico'
-export const MX = 'MX'
-export const Micronesia, Federated States of = 'Micronesia, Federated States of'
-export const FM = 'FM'
-export const Moldova, Republic of = 'Moldova, Republic of'
-export const MD = 'MD'
-export const Monaco = 'Monaco'
-export const MC = 'MC'
-export const Mongolia = 'Mongolia'
-export const MN = 'MN'
-export const Montserrat = 'Montserrat'
-export const MS = 'MS'
-export const Morocco = 'Morocco'
-export const MA = 'MA'
-export const Mozambique = 'Mozambique'
-export const MZ = 'MZ'
-export const Myanmar = 'Myanmar'
-export const MM = 'MM'
-export const Namibia = 'Namibia'
-export const NA = 'NA'
-export const Nauru = 'Nauru'
-export const NR = 'NR'
-export const Nepal = 'Nepal'
-export const NP = 'NP'
-export const Netherlands = 'Netherlands'
-export const NL = 'NL'
-export const Netherlands Antilles = 'Netherlands Antilles'
-export const AN = 'AN'
-export const New Caledonia = 'New Caledonia'
-export const NC = 'NC'
-export const New Zealand = 'New Zealand'
-export const NZ = 'NZ'
-export const Nicaragua = 'Nicaragua'
-export const NI = 'NI'
-export const Niger = 'Niger'
-export const NE = 'NE'
-export const Nigeria = 'Nigeria'
-export const NG = 'NG'
-export const Niue = 'Niue'
-export const NU = 'NU'
-export const Norfolk Island = 'Norfolk Island'
-export const NF = 'NF'
-export const Northern Mariana Islands = 'Northern Mariana Islands'
-export const MP = 'MP'
-export const Norway = 'Norway'
-export const NO = 'NO'
-export const Oman = 'Oman'
-export const OM = 'OM'
-export const Pakistan = 'Pakistan'
-export const PK = 'PK'
-export const Palau = 'Palau'
-export const PW = 'PW'
-export const Palestinian Territory, Occupied = 'Palestinian Territory, Occupied'
-export const PS = 'PS'
-export const Panama = 'Panama'
-export const PA = 'PA'
-export const Papua New Guinea = 'Papua New Guinea'
-export const PG = 'PG'
-export const Paraguay = 'Paraguay'
-export const PY = 'PY'
-export const Peru = 'Peru'
-export const PE = 'PE'
-export const Philippines = 'Philippines'
-export const PH = 'PH'
-export const Pitcairn = 'Pitcairn'
-export const PN = 'PN'
-export const Poland = 'Poland'
-export const PL = 'PL'
-export const Portugal = 'Portugal'
-export const PT = 'PT'
-export const Puerto Rico = 'Puerto Rico'
-export const PR = 'PR'
-export const Qatar = 'Qatar'
-export const QA = 'QA'
-export const Reunion = 'Reunion'
-export const RE = 'RE'
-export const Romania = 'Romania'
-export const RO = 'RO'
-export const Russian Federation = 'Russian Federation'
-export const RU = 'RU'
-export const RWANDA = 'RWANDA'
-export const RW = 'RW'
-export const Saint Helena = 'Saint Helena'
-export const SH = 'SH'
-export const Saint Kitts and Nevis = 'Saint Kitts and Nevis'
-export const KN = 'KN'
-export const Saint Lucia = 'Saint Lucia'
-export const LC = 'LC'
-export const Saint Pierre and Miquelon = 'Saint Pierre and Miquelon'
-export const PM = 'PM'
-export const Saint Vincent and the Grenadines = 'Saint Vincent and the Grenadines'
-export const VC = 'VC'
-export const Samoa = 'Samoa'
-export const WS = 'WS'
-export const San Marino = 'San Marino'
-export const SM = 'SM'
-export const Sao Tome and Principe = 'Sao Tome and Principe'
-export const ST = 'ST'
-export const Saudi Arabia = 'Saudi Arabia'
-export const SA = 'SA'
-export const Senegal = 'Senegal'
-export const SN = 'SN'
-export const Serbia and Montenegro = 'Serbia and Montenegro'
-export const CS = 'CS'
-export const Seychelles = 'Seychelles'
-export const SC = 'SC'
-export const Sierra Leone = 'Sierra Leone'
-export const SL = 'SL'
-export const Singapore = 'Singapore'
-export const SG = 'SG'
-export const Slovakia = 'Slovakia'
-export const SK = 'SK'
-export const Slovenia = 'Slovenia'
-export const SI = 'SI'
-export const Solomon Islands = 'Solomon Islands'
-export const SB = 'SB'
-export const Somalia = 'Somalia'
-export const SO = 'SO'
-export const South Africa = 'South Africa'
-export const ZA = 'ZA'
-export const South Georgia and the South Sandwich Islands = 'South Georgia and the South Sandwich Islands'
-export const GS = 'GS'
-export const Spain = 'Spain'
-export const ES = 'ES'
-export const Sri Lanka = 'Sri Lanka'
-export const LK = 'LK'
-export const Sudan = 'Sudan'
-export const SD = 'SD'
-export const Suriname = 'Suriname'
-export const SR = 'SR'
-export const Svalbard and Jan Mayen = 'Svalbard and Jan Mayen'
-export const SJ = 'SJ'
-export const Swaziland = 'Swaziland'
-export const SZ = 'SZ'
-export const Sweden = 'Sweden'
-export const SE = 'SE'
-export const Switzerland = 'Switzerland'
-export const CH = 'CH'
-export const Syrian Arab Republic = 'Syrian Arab Republic'
-export const SY = 'SY'
-export const Taiwan, Province of China = 'Taiwan, Province of China'
-export const TW = 'TW'
-export const Tajikistan = 'Tajikistan'
-export const TJ = 'TJ'
-export const Tanzania, United Republic of = 'Tanzania, United Republic of'
-export const TZ = 'TZ'
-export const Thailand = 'Thailand'
-export const TH = 'TH'
-export const Timor-Leste = 'Timor-Leste'
-export const TL = 'TL'
-export const Togo = 'Togo'
-export const TG = 'TG'
-export const Tokelau = 'Tokelau'
-export const TK = 'TK'
-export const Tonga = 'Tonga'
-export const TO = 'TO'
-export const Trinidad and Tobago = 'Trinidad and Tobago'
-export const TT = 'TT'
-export const Tunisia = 'Tunisia'
-export const TN = 'TN'
-export const Turkey = 'Turkey'
-export const TR = 'TR'
-export const Turkmenistan = 'Turkmenistan'
-export const TM = 'TM'
-export const Turks and Caicos Islands = 'Turks and Caicos Islands'
-export const TC = 'TC'
-export const Tuvalu = 'Tuvalu'
-export const TV = 'TV'
-export const Uganda = 'Uganda'
-export const UG = 'UG'
-export const Ukraine = 'Ukraine'
-export const UA = 'UA'
-export const United Arab Emirates = 'United Arab Emirates'
-export const AE = 'AE'
-export const United Kingdom = 'United Kingdom'
-export const GB = 'GB'
-export const United States = 'United States'
-export const US = 'US'
-export const United States Minor Outlying Islands = 'United States Minor Outlying Islands'
-export const UM = 'UM'
-export const Uruguay = 'Uruguay'
-export const UY = 'UY'
-export const Uzbekistan = 'Uzbekistan'
-export const UZ = 'UZ'
-export const Vanuatu = 'Vanuatu'
-export const VU = 'VU'
-export const Venezuela = 'Venezuela'
-export const VE = 'VE'
-export const Viet Nam = 'Viet Nam'
-export const VN = 'VN'
-export const Virgin Islands, British = 'Virgin Islands, British'
-export const VG = 'VG'
-export const Virgin Islands, U.S. = 'Virgin Islands, U.S.'
-export const VI = 'VI'
-export const Wallis and Futuna = 'Wallis and Futuna'
-export const WF = 'WF'
-export const Western Sahara = 'Western Sahara'
-export const EH = 'EH'
-export const Yemen = 'Yemen'
-export const YE = 'YE'
-export const Zambia = 'Zambia'
-export const ZM = 'ZM'
-export const Zimbabwe = 'Zimbabwe'
-export const Z =  'ZW'
+const COUNTRIES = [
+  {name: 'Afghanistan', code: 'AF'},
+  {name: 'Åland Islands', code: 'AX'},
+  {name: 'Albania', code: 'AL'},
+  {name: 'Algeria', code: 'DZ'},
+  {name: 'American Samoa', code: 'AS'},
+  {name: 'AndorrA', code: 'AD'},
+  {name: 'Angola', code: 'AO'},
+  {name: 'Anguilla', code: 'AI'},
+  {name: 'Antarctica', code: 'AQ'},
+  {name: 'Antigua and Barbuda', code: 'AG'},
+  {name: 'Argentina', code: 'AR'},
+  {name: 'Armenia', code: 'AM'},
+  {name: 'Aruba', code: 'AW'},
+  {name: 'Australia', code: 'AU'},
+  {name: 'Austria', code: 'AT'},
+  {name: 'Azerbaijan', code: 'AZ'},
+  {name: 'Bahamas', code: 'BS'},
+  {name: 'Bahrain', code: 'BH'},
+  {name: 'Bangladesh', code: 'BD'},
+  {name: 'Barbados', code: 'BB'},
+  {name: 'Belarus', code: 'BY'},
+  {name: 'Belgium', code: 'BE'},
+  {name: 'Belize', code: 'BZ'},
+  {name: 'Benin', code: 'BJ'},
+  {name: 'Bermuda', code: 'BM'},
+  {name: 'Bhutan', code: 'BT'},
+  {name: 'Bolivia', code: 'BO'},
+  {name: 'Bosnia and Herzegovina', code: 'BA'},
+  {name: 'Botswana', code: 'BW'},
+  {name: 'Bouvet Island', code: 'BV'},
+  {name: 'Brazil', code: 'BR'},
+  {name: 'British Indian Ocean Territory', code: 'IO'},
+  {name: 'Brunei Darussalam', code: 'BN'},
+  {name: 'Bulgaria', code: 'BG'},
+  {name: 'Burkina Faso', code: 'BF'},
+  {name: 'Burundi', code: 'BI'},
+  {name: 'Cambodia', code: 'KH'},
+  {name: 'Cameroon', code: 'CM'},
+  {name: 'Canada', code: 'CA'},
+  {name: 'Cape Verde', code: 'CV'},
+  {name: 'Cayman Islands', code: 'KY'},
+  {name: 'Central African Republic', code: 'CF'},
+  {name: 'Chad', code: 'TD'},
+  {name: 'Chile', code: 'CL'},
+  {name: 'China', code: 'CN'},
+  {name: 'Christmas Island', code: 'CX'},
+  {name: 'Cocos (Keeling) Islands', code: 'CC'},
+  {name: 'Colombia', code: 'CO'},
+  {name: 'Comoros', code: 'KM'},
+  {name: 'Congo', code: 'CG'},
+  {name: 'Congo, The Democratic Republic of the', code: 'CD'},
+  {name: 'Cook Islands', code: 'CK'},
+  {name: 'Costa Rica', code: 'CR'},
+  {name: 'Cote D\'Ivoire', code: 'CI'},
+  {name: 'Croatia', code: 'HR'},
+  {name: 'Cuba', code: 'CU'},
+  {name: 'Cyprus', code: 'CY'},
+  {name: 'Czech Republic', code: 'CZ'},
+  {name: 'Denmark', code: 'DK'},
+  {name: 'Djibouti', code: 'DJ'},
+  {name: 'Dominica', code: 'DM'},
+  {name: 'Dominican Republic', code: 'DO'},
+  {name: 'Ecuador', code: 'EC'},
+  {name: 'Egypt', code: 'EG'},
+  {name: 'El Salvador', code: 'SV'},
+  {name: 'Equatorial Guinea', code: 'GQ'},
+  {name: 'Eritrea', code: 'ER'},
+  {name: 'Estonia', code: 'EE'},
+  {name: 'Ethiopia', code: 'ET'},
+  {name: 'Falkland Islands (Malvinas)', code: 'FK'},
+  {name: 'Faroe Islands', code: 'FO'},
+  {name: 'Fiji', code: 'FJ'},
+  {name: 'Finland', code: 'FI'},
+  {name: 'France', code: 'FR'},
+  {name: 'French Guiana', code: 'GF'},
+  {name: 'French Polynesia', code: 'PF'},
+  {name: 'French Southern Territories', code: 'TF'},
+  {name: 'Gabon', code: 'GA'},
+  {name: 'Gambia', code: 'GM'},
+  {name: 'Georgia', code: 'GE'},
+  {name: 'Germany', code: 'DE'},
+  {name: 'Ghana', code: 'GH'},
+  {name: 'Gibraltar', code: 'GI'},
+  {name: 'Greece', code: 'GR'},
+  {name: 'Greenland', code: 'GL'},
+  {name: 'Grenada', code: 'GD'},
+  {name: 'Guadeloupe', code: 'GP'},
+  {name: 'Guam', code: 'GU'},
+  {name: 'Guatemala', code: 'GT'},
+  {name: 'Guernsey', code: 'GG'},
+  {name: 'Guinea', code: 'GN'},
+  {name: 'Guinea-Bissau', code: 'GW'},
+  {name: 'Guyana', code: 'GY'},
+  {name: 'Haiti', code: 'HT'},
+  {name: 'Heard Island and Mcdonald Islands', code: 'HM'},
+  {name: 'Holy See (Vatican City State)', code: 'VA'},
+  {name: 'Honduras', code: 'HN'},
+  {name: 'Hong Kong', code: 'HK'},
+  {name: 'Hungary', code: 'HU'},
+  {name: 'Iceland', code: 'IS'},
+  {name: 'India', code: 'IN'},
+  {name: 'Indonesia', code: 'ID'},
+  {name: 'Iran, Islamic Republic Of', code: 'IR'},
+  {name: 'Iraq', code: 'IQ'},
+  {name: 'Ireland', code: 'IE'},
+  {name: 'Isle of Man', code: 'IM'},
+  {name: 'Israel', code: 'IL'},
+  {name: 'Italy', code: 'IT'},
+  {name: 'Jamaica', code: 'JM'},
+  {name: 'Japan', code: 'JP'},
+  {name: 'Jersey', code: 'JE'},
+  {name: 'Jordan', code: 'JO'},
+  {name: 'Kazakhstan', code: 'KZ'},
+  {name: 'Kenya', code: 'KE'},
+  {name: 'Kiribati', code: 'KI'},
+  {name: 'Korea, Democratic People\'S Republic of', code: 'KP'},
+  {name: 'Korea, Republic of', code: 'KR'},
+  {name: 'Kuwait', code: 'KW'},
+  {name: 'Kyrgyzstan', code: 'KG'},
+  {name: 'Lao People\'S Democratic Republic', code: 'LA'},
+  {name: 'Latvia', code: 'LV'},
+  {name: 'Lebanon', code: 'LB'},
+  {name: 'Lesotho', code: 'LS'},
+  {name: 'Liberia', code: 'LR'},
+  {name: 'Libyan Arab Jamahiriya', code: 'LY'},
+  {name: 'Liechtenstein', code: 'LI'},
+  {name: 'Lithuania', code: 'LT'},
+  {name: 'Luxembourg', code: 'LU'},
+  {name: 'Macao', code: 'MO'},
+  {name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK'},
+  {name: 'Madagascar', code: 'MG'},
+  {name: 'Malawi', code: 'MW'},
+  {name: 'Malaysia', code: 'MY'},
+  {name: 'Maldives', code: 'MV'},
+  {name: 'Mali', code: 'ML'},
+  {name: 'Malta', code: 'MT'},
+  {name: 'Marshall Islands', code: 'MH'},
+  {name: 'Martinique', code: 'MQ'},
+  {name: 'Mauritania', code: 'MR'},
+  {name: 'Mauritius', code: 'MU'},
+  {name: 'Mayotte', code: 'YT'},
+  {name: 'Mexico', code: 'MX'},
+  {name: 'Micronesia, Federated States of', code: 'FM'},
+  {name: 'Moldova, Republic of', code: 'MD'},
+  {name: 'Monaco', code: 'MC'},
+  {name: 'Mongolia', code: 'MN'},
+  {name: 'Montserrat', code: 'MS'},
+  {name: 'Morocco', code: 'MA'},
+  {name: 'Mozambique', code: 'MZ'},
+  {name: 'Myanmar', code: 'MM'},
+  {name: 'Namibia', code: 'NA'},
+  {name: 'Nauru', code: 'NR'},
+  {name: 'Nepal', code: 'NP'},
+  {name: 'Netherlands', code: 'NL'},
+  {name: 'Netherlands Antilles', code: 'AN'},
+  {name: 'New Caledonia', code: 'NC'},
+  {name: 'New Zealand', code: 'NZ'},
+  {name: 'Nicaragua', code: 'NI'},
+  {name: 'Niger', code: 'NE'},
+  {name: 'Nigeria', code: 'NG'},
+  {name: 'Niue', code: 'NU'},
+  {name: 'Norfolk Island', code: 'NF'},
+  {name: 'Northern Mariana Islands', code: 'MP'},
+  {name: 'Norway', code: 'NO'},
+  {name: 'Oman', code: 'OM'},
+  {name: 'Pakistan', code: 'PK'},
+  {name: 'Palau', code: 'PW'},
+  {name: 'Palestinian Territory, Occupied', code: 'PS'},
+  {name: 'Panama', code: 'PA'},
+  {name: 'Papua New Guinea', code: 'PG'},
+  {name: 'Paraguay', code: 'PY'},
+  {name: 'Peru', code: 'PE'},
+  {name: 'Philippines', code: 'PH'},
+  {name: 'Pitcairn', code: 'PN'},
+  {name: 'Poland', code: 'PL'},
+  {name: 'Portugal', code: 'PT'},
+  {name: 'Puerto Rico', code: 'PR'},
+  {name: 'Qatar', code: 'QA'},
+  {name: 'Reunion', code: 'RE'},
+  {name: 'Romania', code: 'RO'},
+  {name: 'Russian Federation', code: 'RU'},
+  {name: 'RWANDA', code: 'RW'},
+  {name: 'Saint Helena', code: 'SH'},
+  {name: 'Saint Kitts and Nevis', code: 'KN'},
+  {name: 'Saint Lucia', code: 'LC'},
+  {name: 'Saint Pierre and Miquelon', code: 'PM'},
+  {name: 'Saint Vincent and the Grenadines', code: 'VC'},
+  {name: 'Samoa', code: 'WS'},
+  {name: 'San Marino', code: 'SM'},
+  {name: 'Sao Tome and Principe', code: 'ST'},
+  {name: 'Saudi Arabia', code: 'SA'},
+  {name: 'Senegal', code: 'SN'},
+  {name: 'Serbia and Montenegro', code: 'CS'},
+  {name: 'Seychelles', code: 'SC'},
+  {name: 'Sierra Leone', code: 'SL'},
+  {name: 'Singapore', code: 'SG'},
+  {name: 'Slovakia', code: 'SK'},
+  {name: 'Slovenia', code: 'SI'},
+  {name: 'Solomon Islands', code: 'SB'},
+  {name: 'Somalia', code: 'SO'},
+  {name: 'South Africa', code: 'ZA'},
+  {name: 'South Georgia and the South Sandwich Islands', code: 'GS'},
+  {name: 'Spain', code: 'ES'},
+  {name: 'Sri Lanka', code: 'LK'},
+  {name: 'Sudan', code: 'SD'},
+  {name: 'Suriname', code: 'SR'},
+  {name: 'Svalbard and Jan Mayen', code: 'SJ'},
+  {name: 'Swaziland', code: 'SZ'},
+  {name: 'Sweden', code: 'SE'},
+  {name: 'Switzerland', code: 'CH'},
+  {name: 'Syrian Arab Republic', code: 'SY'},
+  {name: 'Taiwan, Province of China', code: 'TW'},
+  {name: 'Tajikistan', code: 'TJ'},
+  {name: 'Tanzania, United Republic of', code: 'TZ'},
+  {name: 'Thailand', code: 'TH'},
+  {name: 'Timor-Leste', code: 'TL'},
+  {name: 'Togo', code: 'TG'},
+  {name: 'Tokelau', code: 'TK'},
+  {name: 'Tonga', code: 'TO'},
+  {name: 'Trinidad and Tobago', code: 'TT'},
+  {name: 'Tunisia', code: 'TN'},
+  {name: 'Turkey', code: 'TR'},
+  {name: 'Turkmenistan', code: 'TM'},
+  {name: 'Turks and Caicos Islands', code: 'TC'},
+  {name: 'Tuvalu', code: 'TV'},
+  {name: 'Uganda', code: 'UG'},
+  {name: 'Ukraine', code: 'UA'},
+  {name: 'United Arab Emirates', code: 'AE'},
+  {name: 'United Kingdom', code: 'GB'},
+  {name: 'United States', code: 'US'},
+  {name: 'United States Minor Outlying Islands', code: 'UM'},
+  {name: 'Uruguay', code: 'UY'},
+  {name: 'Uzbekistan', code: 'UZ'},
+  {name: 'Vanuatu', code: 'VU'},
+  {name: 'Venezuela', code: 'VE'},
+  {name: 'Viet Nam', code: 'VN'},
+  {name: 'Virgin Islands, British', code: 'VG'},
+  {name: 'Virgin Islands, U.S.', code: 'VI'},
+  {name: 'Wallis and Futuna', code: 'WF'},
+  {name: 'Western Sahara', code: 'EH'},
+  {name: 'Yemen', code: 'YE'},
+  {name: 'Zambia', code: 'ZM'},
+  {name: 'Zimbabwe', code: 'ZW'}
+]
+export default COUNTRIES
