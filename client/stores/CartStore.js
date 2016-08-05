@@ -43,6 +43,10 @@ class CartStore extends EventEmitter {
     return _cart;
   }
 
+  getAddress() {
+    return _address;
+  }
+
 }
 
 export default new CartStore();
