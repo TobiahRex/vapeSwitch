@@ -173,3 +173,20 @@ div.alternative-payment-method::before, div.alternative-payment-method::after {
   height: 1px;
   background: darkgray;
 }
+
+#custom-info-login-redirect {
+  cursor: pointer;
+}
+
+input.customer-info {
+  margin-bottom: 10px;
+}
+input.customer-info:focus {
+  border: 2px solid rgba(68, 235, 41, 0.88);
+}
+
+btn-warning:hover {
+  color: #ffffff;
+  background-color: #0ac83c;
+  border-color: #0abe18;
+}
