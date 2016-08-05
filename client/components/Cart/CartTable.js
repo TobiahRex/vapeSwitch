@@ -13,41 +13,21 @@ export default class CartTable extends Component {
     super(props);
 
     this.generateItems = this.generateItems.bind(this);
-    this.subTotal = this.subTotal.bind(this);
-    this.decreaseQty = this.decreaseQty.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
+    this.decreaseQty = this.decreaseQty.bind(this);
+    this.subTotal = this.subTotal.bind(this);
   }
-
-  decreaseQty(item) {
-    item.cartQty -= 1;
-    if( item.cartQty <= 0){
-      toastr.warning(`${item.title} ${item.model} was removed from your cart.`, 'REMOVED');
-      CartActions.removeLSCartItem(item);
-    } else {
-      CartActions.updateLSCartItem(item);
-    }
-  }
-
-  increaseQty(item) {
-    if (item.cartQty) {
-      item.cartQty += 1;
-    } else {
-      item.cartQty = 1;
-    }
-    CartActions.addLSCartItem(item);
-  }
-
   generateItems() {
-    console.log('this.props.items: ', this.props.items);
-    if (!this.props.items.length) return;
+    if(!this.props.items[0]) return;
     const items = this.props.items.map((stateItem, i) => {
       const item = stateItem;
+      console.log('item: ', item);
       stateItem.uuid = uuid()
       return (
-        <tr key={stateItem._id}>
+        <tr key={item._id}>
           <td className="text-center">
             <div id="cart-product" className="row">
-              <img id="cart-product-img" className="thumbnail col-xs-4" src={item.images[0] || ''} />
+              <img id="cart-product-img" className="thumbnail col-xs-5" src={item.images.length ? item.images[0] : ''} />
               <span id="cart-product-desc" className="col-xs-8">{item.title} {item.model}</span>
             </div>
           </td>
@@ -72,33 +52,51 @@ export default class CartTable extends Component {
     })
     return items;
   }
-
+  increaseQty(item) {
+    if (item.cartQty) {
+      item.cartQty += 1;
+    } else {
+      item.cartQty = 1;
+    }
+    CartActions.addLSCartItem(item);
+  }
+  decreaseQty(item) {
+    item.cartQty -= 1;
+    if( item.cartQty <= 0){
+      toastr.warning(`${item.title} ${item.model} was removed from your cart.`, 'REMOVED');
+      CartActions.removeLSCartItem(item);
+    } else {
+      toastr.success(`Removed 1 ${item.title} ${item.model} from your cart.`, 'UPDATED');
+      CartActions.updateLSCartItem(item);
+    }
+  }
   subTotal(qty, price) {
     if (!qty || !price) return ('Quantity or Price is Empty.');
     return `\u00a5 ${qty * price}`;
   }
 
   render() {
-    let { items } = this.props;
-    let itemCards = this.generateItems();
-
-    console.log("itemCards: ", itemCards);
+    let items = this.generateItems();
+    console.log('items: ', items);
+    let emptyCart = !items ? <h1>Your Cart Is Empty</h1> : null
+  console.log(emptyCart);
     return (
+      <div>
       <table className="table table-hover">
         <thead>
-          { !itemCards ? '' :
-            <tr>
-              <th className="text-center text-success"></th>
-              <th className="text-center text-success">Price</th>
-              <th className="text-center text-success">Quantity</th>
-              <th className="text-center text-success">Sub Total</th>
-            </tr>
-          }
+          <tr>
+            <th className="text-center text-success"></th>
+            <th className="text-center text-success">Price</th>
+            <th className="text-center text-success">Quantity</th>
+            <th className="text-center text-success">Sub Total</th>
+          </tr>
         </thead>
         <tbody>
-          {itemCards || <h1>Your Cart Is Empty</h1>}
+            {items}
         </tbody>
       </table>
-    )
+      {emptyCart}
+    </div>
+    );
   }
 }

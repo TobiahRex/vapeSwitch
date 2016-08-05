@@ -1,5 +1,5 @@
 body {
-
+  background-color: rgb(9, 88, 0);
 }
 div#contact-container {
   margin-bottom: 100px;
@@ -37,6 +37,9 @@ img#mod-main-img {
 #cart-product-desc {
   margin-top: 50px;
   font-size: 18px;
+}
+#cart-product {
+  padding-left: 25px;
 }
 
 img#cart-product-img {
@@ -76,9 +79,10 @@ div#quantity {
 }
 
 div.mod-card {
+  background-color: rgb(7, 6, 70);
   margin: 0px;
   border: 1px;
-  box-shadow: 0px 4px 44px rgba(21, 245, 18, 0.15);
+  box-shadow: -3px 5px 34px rgba(21, 245, 18, 0.15);
 }
 
 div.mod-card-button {

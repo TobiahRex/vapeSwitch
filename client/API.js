@@ -30,7 +30,13 @@ const API = {
   removeLSCartItem(item) {
     let ls = this.getLocalStorage();
     console.log('ls before removal: ', ls);
-    ls = ls.map((lsItem, i) => lsItem._id === item._id ? ls.splice(i, 1) : lsItem );
+    ls = ls.map((lsItem, i) => {
+      if(lsItem._id === item._id) {
+        ls.splice(i, 1);
+        return;
+      }
+      return lsItem;
+    });
     console.log('ls after removal: ', ls);
     this.writeToLocalStorage(ls);
   },
@@ -90,7 +96,7 @@ const API = {
     localStorage.address = lsAddress;
 
     lsAddress = this.getLSAddress();
-    ServerActions.addedAddress(newLsAddress);
+    ServerActions.addedAddress(lsAddress);
   },
   getLSAddress() {
     let lsAddress = {}

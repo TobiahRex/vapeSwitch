@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Breadcrumb_shipping from './breadcrumb_shipping'
+import { Link } from 'react-router'
+import CartStore from '../../stores/CartStore'
 
 // TODO User arrives here by clicking on a Link so there needs to be a way to access shipping information props from a parent component.
 // May have to look in to sending data with <Link> look into Props accessible through react-router.
@@ -22,7 +24,7 @@ export default class ShippingMethod extends Component {
   }
 
   componentWillUnmount() {
-    CartStore.removeListener('CHANGE');
+    CartStore.removeListener('CHANGE', this._onChange);
   }
 
   _onChange() {

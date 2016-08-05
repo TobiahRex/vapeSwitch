@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import Breadcrumb_cart from './breadcrumb_cart'
 import CountrySelector from './countrySelector'
-import StateSelector from './StateSelector'
+import StateSelector from './stateSelector'
+import CartActions from '../../actions/CartActions'
 
 export default class CheckoutInfo extends Component {
   constructor(props) {
@@ -23,35 +24,35 @@ export default class CheckoutInfo extends Component {
     this.submitCountry = this.submitCountry.bind(this);
     this.submitState = this.submitState.bind(this);
   }
-}
 
-submitCountry(country) {
-  if (!country) toastr.error('Could not choose a country.', 'ERROR');
-  this.setState({ country });
-}
+  submitCountry(country) {
+    if (!country) toastr.error('Could not choose a country.', 'ERROR');
+    this.setState({ country });
+  }
 
-submitState(state) {
-  if (!state) toastr.error('Could not choose a state.', 'ERROR');
-  this.setState({ state });
-}
+  submitState(state) {
+    if (!state) toastr.error('Could not choose a state.', 'ERROR');
+    this.setState({ state });
+  }
 
-saveAddress(event) {
-  event.preventDefault();
+  saveAddress(event) {
+    event.preventDefault();
 
-  let Address = { Address: this.state }
+    let Address = { Address: this.state }
 
-  CartActions.addNewAddress(Address);
-  this.setState({
-    firstName: '',
-    lastName: '',
-    company: '',
-    street: '',
-    city: '',
-    state: '',
-    country: '',
-    zip: '',
-    phone: '',
-  });
+    CartActions.addNewAddress(Address);
+    this.setState({
+      firstName: '',
+      lastName: '',
+      company: '',
+      street: '',
+      city: '',
+      state: '',
+      country: '',
+      zip: '',
+      phone: '',
+    });
+  };
 
   render() {
     let { checkoutInfo } = this.props
@@ -118,7 +119,7 @@ saveAddress(event) {
                   </div>
 
                   <Link to="shipping">
-                    <button onClick={() => this.saveAddress()} className="to-shipping-method-button col-xs-12 btn btn-lg btn-warning">
+                    <button type="submit" onClick={this.saveAddress} className="to-shipping-method-button col-xs-12 btn btn-lg btn-warning">
                       Continue to shipping method
                     </button>
                   </Link>

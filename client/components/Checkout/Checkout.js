@@ -21,7 +21,7 @@ export default class Checkout extends Component {
   }
 
   componentDidMount(){
-    CartActions.getCart();
+    CartActions.getLSCartItems();
     CartStore.on('CHANGE', this._onChange);
   }
 
