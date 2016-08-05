@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import CheckoutBreadcrumb from './breadcrumb'
 import CountrySelector from './countrySelector'
+import StateSelector from './StateSelector'
 
 export default class CheckoutInfo extends Component {
   render() {
@@ -40,9 +41,9 @@ export default class CheckoutInfo extends Component {
 
                 <input type="text" className="customer-info custom-info-city form-control" placeholder="City" require/>
 
-                <CountrySelector className="customer-info" />
+                <CountrySelector />
 
-                <input type="text" className="customer-info custom-info-state form-control" placeholder="State" required/>
+                <StateSelector />
 
                 <input type="text" className="customer-info custom-info-zip form-control" placeholder="Zip code" required/>
 
