@@ -12,11 +12,34 @@ import CheckoutInfo from './CheckoutInfo'
 
 // TODO Order Success Page
 
+function getComponentState(){
+  return { cart: CartStore.getCart() };
+}
+
 export default class Checkout extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      info: {},
+      cart: getComponentState();
+    }
+    this._onChange() = this._onChange.bind(this);
+  }
+
+  componentDidMount(){
+    CartStore.on('CHANGE', this._onChange());
+    CartActions.getCart();
+  }
+
+  _onChange(){
+    this.setState(getComponentState());
+  }
+
   render() {
     return (
       <div className="checkout-wrapper row">
-        <CheckoutInfo />
+        <CheckoutInfo checkoutInfo={this.state.info}/>
         <CheckoutSummary />
       </div>
     )

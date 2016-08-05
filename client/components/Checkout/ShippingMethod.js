@@ -23,7 +23,12 @@ export default class ShippingMethod extends Component {
             <div className="customer-info-container">
               <h3 className="customer-info-title">Shipping Address</h3>
 
-              <h5>Already have an account with us? <span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{Address.name}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{Address.street}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{Address.city}, {Address.state}, {Address.zip}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+              <h5>{Address.country}<span className="text-success" id="custom-info-login-redirect"> Log in</span> </h5>
+
+              <Link to="checkout">Edit shipping address</Link>
 
               <h3 className="customer-info-title">Shipping Method</h3>
 
