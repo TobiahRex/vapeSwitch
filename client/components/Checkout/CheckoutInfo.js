@@ -40,7 +40,7 @@ export default class CheckoutInfo extends Component {
 
                 <input type="text" className="customer-info custom-info-city form-control" placeholder="City" require/>
 
-                <CountrySelector />
+                <CountrySelector className="customer-info" />
 
                 <input type="text" className="customer-info custom-info-state form-control" placeholder="State" required/>
 

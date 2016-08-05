@@ -9,7 +9,7 @@ class CountrySelector extends Component {
       <option key={uuid()} data-code={countryObj.code} value={countryObj.name}>{countryObj.name}</option>
     );
     return (
-      <div className="customer-info-country-container">
+      <div className="customer-info customer-info-country-container">
       <select name="" id="select" className="form-control customer-info customer-info-country">
         {countryOptions}
       </select>
