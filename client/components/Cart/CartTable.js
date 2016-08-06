@@ -82,7 +82,7 @@ export default class CartTable extends Component {
   console.log(emptyCart);
     return (
       <div>
-      <table className="table table-hover">
+      <table className="table">
         <thead>
           <tr>
             <th className="text-center text-success"></th>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import toastr from 'toastr'
 
 // TODO add ContactActions for Submitting new Email
 
@@ -59,7 +60,7 @@ export default class ContactForm extends Component {
               className="form-control"
               id="contact-email-body"
               cols="25"
-              rows="15"></textarea>
+              rows="10"></textarea>
           </div>
           <div className="form-group">
             <label className="col-lg-2 control-label">Copy Sent To Your Email?</label>

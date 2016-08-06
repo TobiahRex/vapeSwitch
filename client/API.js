@@ -11,12 +11,13 @@ const API = {
   },
   addLSCartItem(item) {
     let ls = this.getLocalStorage();
-
+    console.log('ls.length: ', ls.length);
     if (!ls.length) {
       ls.push(item);
       return this.writeToLocalStorage(ls);
     } else {
       ls = ls.map(lsItem => {
+        console.log('lsItem: ', lsItem);
         if (lsItem._id === item._id){
           lsItem = item;
           return lsItem;
@@ -37,8 +38,12 @@ const API = {
       }
       return lsItem;
     });
-    console.log('ls after removal: ', ls);
-    this.writeToLocalStorage(ls);
+    if (!ls[0]){
+      localStorage.cart = JSON.stringify([]);
+      ServerActions.updateLSCart([])
+    } else {
+      this.writeToLocalStorage(ls);
+    }
   },
   updateLSCartItem(item) {
     let ls = this.getLocalStorage();
