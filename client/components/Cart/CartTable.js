@@ -16,6 +16,7 @@ export default class CartTable extends Component {
     this.increaseQty = this.increaseQty.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
     this.subTotal = this.subTotal.bind(this);
+    this.finalTotal = this.finalTotal.bind(this);
   }
   generateItems() {
     if(!this.props.items[0]) return;
@@ -74,12 +75,15 @@ export default class CartTable extends Component {
     if (!qty || !price) return ('Quantity or Price is Empty.');
     return `\u00a5 ${qty * price}`;
   }
+  finalTotal() {
+    let itemTotal = this.props.items.map(item => item.newPrice * item.cartQty);
+    return itemTotal.reduce((a,b) => a+b);
+  }
 
   render() {
     let items = this.generateItems();
-    console.log('items: ', items);
-    let emptyCart = !items ? <h1>Your Cart Is Empty</h1> : null
-  console.log(emptyCart);
+    let emptyCart = !items ? <h1>Your Cart Is Empty</h1> : null;
+
     return (
       <div>
       <table className="table">
@@ -97,10 +101,10 @@ export default class CartTable extends Component {
       </table>
       <footer>
         <div className="total">
-          
+          <strong>{this.finalTotal}</strong>
         </div>
         <div className="checkout-actions">
-          
+          strong{{}}
         </div>
       </footer>
       {emptyCart}
