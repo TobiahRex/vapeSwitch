@@ -71,6 +71,9 @@ div#quantity {
 #checkout-main-header {
   font-size: 12px;
 }
+th.cart-header {
+  color: #333;
+}
 
 #mod-main-desc {
   margin: 0px;
@@ -244,4 +247,8 @@ div.checkbox-wrapper {
   margin-right: 20px;
   width: 16px;
   height: 16px;
+}
+td.text-center.cart-cells {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
 }

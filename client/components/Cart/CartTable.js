@@ -25,18 +25,18 @@ export default class CartTable extends Component {
       stateItem.uuid = uuid()
       return (
         <tr key={item._id}>
-          <td className="text-center">
+          <td className="text-center cart-cells">
             <div id="cart-product" className="row">
               <img id="cart-product-img" className="thumbnail col-xs-5" src={item.images.length ? item.images[0] : ''} />
               <span id="cart-product-desc" className="col-xs-8">{item.title} {item.model}</span>
             </div>
           </td>
-          <td className="text-center">
+          <td className="text-center cart-cells">
             <div id="cart-price">{`\u00a5 ${item.newPrice}`}</div>
           </td>
-          <td className="text-center">
+          <td className="text-center cart-cells">
             <div id="quantity">
-              <span id="cart-quantity">{stateItem.cartQty}</span>
+              <span id="cart-quantity"><strong>{stateItem.cartQty}</strong></span>
               <div className="btn-group">
                 <button onClick={this.decreaseQty.bind(null, item)} href="" className="btn btn-info">-</button>
 
@@ -44,8 +44,8 @@ export default class CartTable extends Component {
               </div>
             </div>
           </td>
-          <td className="text-center">
-            <div id="cart-subtotal">{this.subTotal(item.quantity, item.newPrice)}</div>
+          <td className="text-center cart-cells">
+            <div id="cart-subtotal"><strong>{this.subTotal(item.quantity, item.newPrice)}</strong></div>
           </td>
         </tr>
       )
@@ -85,16 +85,24 @@ export default class CartTable extends Component {
       <table className="table">
         <thead>
           <tr>
-            <th className="text-center text-success"></th>
-            <th className="text-center text-success">Price</th>
-            <th className="text-center text-success">Quantity</th>
-            <th className="text-center text-success">Sub Total</th>
+            <th className="text-center cart-header"></th>
+            <th className="text-center cart-header">Price</th>
+            <th className="text-center cart-header">Quantity</th>
+            <th className="text-center cart-header">Sub Total</th>
           </tr>
         </thead>
         <tbody>
             {items}
         </tbody>
       </table>
+      <footer>
+        <div className="total">
+          
+        </div>
+        <div className="checkout-actions">
+          
+        </div>
+      </footer>
       {emptyCart}
     </div>
     );
