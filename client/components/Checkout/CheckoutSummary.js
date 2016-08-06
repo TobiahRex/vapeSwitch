@@ -6,7 +6,7 @@ export default class CheckoutSummary extends Component {
   render() {
     let { cartInfo } = this.props
     return (
-      <div id="checkout-sidebar" className="sidebar col-xs-6">
+      <div id="checkout-sidebar" className="well sidebar col-xs-6 col-xs-offset-1">
         <div className="sidebar_header"></div>
         <div className="sidebar_content">
           <div className="order-summary">

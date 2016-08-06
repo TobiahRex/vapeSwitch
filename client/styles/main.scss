@@ -1,11 +1,27 @@
 body {
   background-color: #0e6704;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.728571;
+  color: #dfdfdf;
 }
 div#contact-container {
   margin-bottom: 100px;
 }
+div#main-container {
+  background-image: url("https://secure.static.tumblr.com/9c667cbb9ebfac788a1c404a3cc0474b/3wfa9aa/pUen9p4bx/tumblr_static_cool_smoke.png");
+}
 nav.navbar {
+  margin-bottom: 0px;
   background-color: #09243f;
+}
+div.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+#dashboard-wrapper {
+  padding-top: 100px;
+  height: 100%;
 }
 #navbar-logo {
   width: 100px;
@@ -15,6 +31,7 @@ nav.navbar {
   width: 35px;
 }
 #dashboard-navpills {
+  margin-left: 20%;
   width: 300px;
 }
 #footer {
@@ -29,6 +46,10 @@ nav.navbar {
 }
 #copyright-banner {
   font-size: 12px;
+}
+
+#mods-list {
+  margin-top: 40px;
 }
 
 img#mod-main-img {
@@ -71,21 +92,42 @@ div#quantity {
 #checkout-main-header {
   font-size: 12px;
 }
+#checkout-info-wrapper {
+  margin-top: 40px;
+  padding-right: 30px;
+  background-color: rgba(41, 40, 40, 0.98);
+}
+#checkout-sidebar {
+  padding-left: 30px;
+  margin-top: 40px;
+  background-color: rgba(41, 40, 40, 0.98);
+}
 th.cart-header {
   color: #333;
 }
 
 #mod-main-desc {
   margin: 0px;
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 
+#mods-list {
+  margin-top: 0px;
+  padding-top: 40px;
+  height: 100%;
+  background-image: url("https://secure.static.tumblr.com/9c667cbb9ebfac788a1c404a3cc0474b/3wfa9aa/pUen9p4bx/tumblr_static_cool_smoke.png");
+}
+
 div.mod-card {
-  background-color: rgb(7, 6, 70);
+  background-color: rgba(4, 29, 56, 0.96);
   margin: 0px;
   border: 1px;
-  box-shadow: -3px 5px 34px rgba(21, 245, 18, 0.15);
+  box-shadow: -10px 10px 30px rgba(6, 254, 3, 0.25);
+}
+button.add-mod-to-cart {
+  border: 1px;
+  background-color: #00a300;
 }
 
 div.mod-card-button {
@@ -98,7 +140,6 @@ div.checkout-wrapper {
 
 div.main {
   padding-right: 40px;
-  border-right: 1px solid #333232;
 }
 
 div#checkout-main-header {
@@ -116,10 +157,6 @@ div.stripe-payment-container {
 img.stripe-payment-logo {
   width: 70px;
   padding-left: 5px;
-}
-
-div#checkout-sidebar {
-  padding-left: 30px;
 }
 
 div.order-summary-section-content {

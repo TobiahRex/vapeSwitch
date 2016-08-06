@@ -66,7 +66,7 @@ export default class CheckoutInfo extends Component {
     };
     let Address = {};
     return(
-      <div className="main col-xs-6">
+      <div id="checkout-info-wrapper" className="main col-xs-5 well">
         <div id="checkout-main">
           <div id="checkout-main-header">
             <Breadcrumb_cart />

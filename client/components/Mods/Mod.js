@@ -48,7 +48,7 @@ export default class Mod extends Component {
           </p>
         </div>
         <div className="mod-card-button col-xs-3">
-          <button className="btn btn-primary btn-lg" onClick={ () => this.productClicked(this.props.mod, buttonText)}>{buttonText}</button>
+          <button className="add-mod-to-cart btn btn-primary btn-lg" onClick={ () => this.productClicked(this.props.mod, buttonText)}>{buttonText}</button>
         </div>
       </div>
     )

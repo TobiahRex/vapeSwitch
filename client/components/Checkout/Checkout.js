@@ -33,7 +33,7 @@ export default class Checkout extends Component {
     this.setState(_getComponentState());
   }
 
-  render() {
+  render() { 
     return (
       <div className="checkout-wrapper row">
         <CheckoutInfo checkoutInfo={this.state.info}/>
