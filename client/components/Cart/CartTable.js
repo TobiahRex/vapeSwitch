@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import CartStore from '../../stores/CartStore.js'
 import CartActions from '../../actions/CartActions'
 import toastr from 'toastr'
 const uuid = require('uuid');
 
-// TODO fix "Your Cart Is Empty"
-// The html is messed up.  It's not allowing transition to Checkout form cart.
 
 export default class CartTable extends Component {
 
@@ -46,7 +45,9 @@ export default class CartTable extends Component {
             </div>
           </td>
           <td className="text-center cart-cells">
-            <div id="cart-subtotal"><strong>{this.subTotal(item.quantity, item.newPrice)}</strong></div>
+            <div id="cart-subtotal">
+              <strong>{this.subTotal(item.quantity, item.newPrice)}</strong>
+            </div>
           </td>
         </tr>
       )
@@ -56,6 +57,7 @@ export default class CartTable extends Component {
   increaseQty(item) {
     if (item.cartQty) {
       item.cartQty += 1;
+      toastr.info(`Added 1 ${item.title} ${item.model} from your cart.`, 'ADDED');
     } else {
       item.cartQty = 1;
     }
@@ -67,7 +69,7 @@ export default class CartTable extends Component {
       toastr.warning(`${item.title} ${item.model} was removed from your cart.`, 'REMOVED');
       CartActions.removeLSCartItem(item);
     } else {
-      toastr.success(`Removed 1 ${item.title} ${item.model} from your cart.`, 'UPDATED');
+      toastr.info(`Removed 1 ${item.title} ${item.model} from your cart.`, 'REMOVED');
       CartActions.updateLSCartItem(item);
     }
   }
@@ -82,33 +84,42 @@ export default class CartTable extends Component {
 
   render() {
     let items = this.generateItems();
-    let emptyCart = !items ? <h1>Your Cart Is Empty</h1> : null;
+    let tableClass, emptyCart, footerVisibility;
+    if(!items) {
+      emptyCart = <h1>Your Cart Is Empty</h1>
+      footerVisibility = 'hidden';
+      tableClass = 'hidden';
+    } else {
+      emptyCart = '';
+      footerVisibility = '';
+      tableClass = 'table';
+    }
 
     return (
       <div>
-      <table className="table">
-        <thead>
-          <tr>
-            <th className="text-center cart-header"></th>
-            <th className="text-center cart-header">Price</th>
-            <th className="text-center cart-header">Quantity</th>
-            <th className="text-center cart-header">Sub Total</th>
-          </tr>
-        </thead>
-        <tbody>
+        <table id="cart-table" className={tableClass}>
+          <thead>
+            <tr>
+              <th className="text-center cart-header"></th>
+              <th className="text-center cart-header">Price</th>
+              <th className="text-center cart-header">Quantity</th>
+              <th className="text-center cart-header">Sub Total</th>
+            </tr>
+          </thead>
+          <tbody>
             {items}
-        </tbody>
-      </table>
-      <footer>
-        <div className="total">
-          <strong>{this.finalTotal}</strong>
-        </div>
-        <div className="checkout-actions">
-          strong{{}}
-        </div>
-      </footer>
-      {emptyCart}
-    </div>
+          </tbody>
+        </table>
+        <footer className={footerVisibility}>
+          <div className="total">
+            <strong>{this.finalTotal}</strong>
+          </div>
+          <div className="checkout-actions pull-right">
+            <Link to="checkout"><button className="btn btn-warning btn-lg "><strong>Checkout > </strong></button></Link>
+          </div>
+        </footer>
+        {emptyCart}
+      </div>
     );
   }
 }
