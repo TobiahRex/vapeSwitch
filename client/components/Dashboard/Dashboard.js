@@ -6,6 +6,10 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div id="dashboard-wrapper" className="text-center">
+
+        
+
+
         <img id="dashboard-jumbotron" src="client/styles/images/vapeswitch_blank.png" />
         <h3><i>Make the Switch</i></h3>
         <div className="col-xs-4 col-xs-offset-4">

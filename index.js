@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 app.set('layout');
 app.set('view engine', 'ejs');
-app.set('view options', {layout: 'layout'});
+app.set('view options', { layout: 'layout' });
 app.set('views', path.join(process.cwd(), '/server/views'));
 app.use(compress());
 app.use(layouts);
